@@ -9,23 +9,23 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="244dp"
+        android:layout_width="228dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="103dp"
+        android:layout_marginBottom="17dp"
         android:text="Hello World!"
+        android:textSize="36sp"
         app:layout_constraintBottom_toTopOf="@+id/btnMap"
-        app:layout_constraintStart_toStartOf="@+id/btnMap"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnMap"
-        android:layout_width="wrap_content"
+        android:layout_width="128dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="209dp"
         android:onClick="openMap"
         android:text="Abrir Mapa"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
