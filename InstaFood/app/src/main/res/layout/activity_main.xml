@@ -8,11 +8,10 @@
     tools:layout_editor_absoluteY="81dp">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textViewInfoRestaurante"
         android:layout_width="228dp"
         android:layout_height="0dp"
-        android:layout_marginTop="103dp"
-        android:layout_marginBottom="17dp"
+        android:layout_marginTop="86dp"
         android:text="Hello World!"
         android:textSize="36sp"
         app:layout_constraintBottom_toTopOf="@+id/btnMap"
@@ -24,10 +23,24 @@
         android:id="@+id/btnMap"
         android:layout_width="128dp"
         android:layout_height="0dp"
+        android:layout_marginBottom="18dp"
         android:onClick="openMap"
         android:text="Abrir Mapa"
+        app:layout_constraintBottom_toTopOf="@+id/btnVistaRes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewInfoRestaurante" />
+
+    <Button
+        android:id="@+id/btnVistaRes"
+        android:layout_width="124dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="244dp"
+        android:onClick="openMap"
+        android:text="VIsta Restaurante"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnMap" />
 
 </android.support.constraint.ConstraintLayout>
