@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity
 
 {
 
-    private Button btnMap, btnvistaRestaurante;
+    private Button btnMap, btnvistaRestaurante,btnRegistrarse, btnIniciarSesion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -20,6 +20,8 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         btnMap=(Button) findViewById(R.id.btnMap);
         btnvistaRestaurante=(Button)findViewById(R.id.btnVistaRes);
+        btnIniciarSesion = (Button)findViewById(R.id.btnIniciarSesion);
+        btnRegistrarse = (Button)findViewById(R.id.btnRegistrarse);
     }
 
     public void openMap(View view)
@@ -30,6 +32,26 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
         }
 
+    }
+
+    public void openLogin(View view)
+    {
+        if(view.getId() == R.id.btnIniciarSesion)
+        {
+            Intent intent=new Intent(this,LoginActivity.class);
+            startActivity(intent);
+
+        }
+
+    }
+
+    public void openRegisterForm(View view)
+    {
+        if(view.getId() == R.id.btnRegistrarse)
+        {
+            Intent intent=new Intent(this,RegistroUsuarioActivity.class);
+            startActivity(intent);
+        }
     }
 
 }

@@ -31,12 +31,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <Button
-                android:id="@+id/btnRegistrarse"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Registrarse" />
-
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
