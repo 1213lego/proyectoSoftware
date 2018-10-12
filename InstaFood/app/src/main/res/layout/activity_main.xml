@@ -44,4 +44,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnMap" />
 
+    <Button
+        android:id="@+id/btnIniciarSesion"
+        android:layout_width="134dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="28dp"
+        android:onClick="openLogin"
+        android:text="Iniciar Sesión"
+        app:layout_constraintTop_toBottomOf="@+id/btnVistaRes"
+        tools:layout_editor_absoluteX="116dp" />
+
+    <Button
+        android:id="@+id/btnRegistrarse"
+        android:layout_width="123dp"
+        android:layout_height="wrap_content"
+        android:onClick="openRegisterForm"
+        android:text="Registrarse"
+        tools:layout_editor_absoluteX="121dp"
+        tools:layout_editor_absoluteY="375dp" />
+
 </android.support.constraint.ConstraintLayout>
