@@ -300,6 +300,11 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
     }
 
+    private void signIn()
+    {
+        Toast.makeText(this,mEmailView.getText() , Toast.LENGTH_SHORT).show();
+
+    }
 
     private void signInWithGoogle()
     {
@@ -344,18 +349,20 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         mEmailView.setAdapter(adapter);
     }
-
     @Override
     public void onClick(View v)
     {
         switch (v.getId())
         {
 
-            case R.id.btnIniciarSesion:
+            case R.id.btnIniciarConGoogle:
                 signInWithGoogle();
                 break;
 
-                //TODO: AGREGAR EL CODIGO PARA INICIAR SESIÓN NORMALMENTE
+            case  R.id.btnIniciarSesion:
+                signIn();
+                break;
+
 
         }
 
