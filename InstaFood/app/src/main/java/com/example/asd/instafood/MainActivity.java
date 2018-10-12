@@ -8,9 +8,7 @@ import android.widget.Button;
 
 
 public class MainActivity extends AppCompatActivity
-
 {
-
     private Button btnMap, btnvistaRestaurante;
 
     @Override
@@ -29,7 +27,5 @@ public class MainActivity extends AppCompatActivity
             Intent intent=new Intent(this,RestaurantesMapsActivity.class);
             startActivity(intent);
         }
-
     }
-
 }
