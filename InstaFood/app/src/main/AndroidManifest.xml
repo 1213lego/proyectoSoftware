@@ -28,8 +28,7 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-               <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <!--
@@ -46,20 +45,33 @@
 
         <activity
             android:name=".RestaurantesMapsActivity"
-            android:label="@string/title_activity_restaurantes_maps" />
+            android:label="@string/title_activity_restaurantes_maps" >
+        </activity>
+
         <activity
             android:name=".LoginActivity"
-            android:label="@string/title_activity_login" />
-        <activity android:name=".AnuncianteActivity" />
-        <activity android:name=".UsuarioActivity" />
-        <activity android:name=".RegistroUsuarioActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:label="@string/title_activity_login" >
         </activity>
-        <activity android:name=".RegistroRestauranteActivity"></activity>
+
+        <activity
+            android:name=".AnuncianteActivity"
+            android:label="Anunciante">
+        </activity>
+
+        <activity
+            android:name=".UsuarioActivity"
+            android:label="Usuario">
+        </activity>
+
+        <activity
+            android:name=".RegistroUsuarioActivity"
+            android:label="Resgistrate">
+        </activity>
+
+        <activity
+            android:name=".RegistroRestauranteActivity"
+            android:label="Resgitra tu Resturante">
+        </activity>
     </application>
 
 </manifest>
