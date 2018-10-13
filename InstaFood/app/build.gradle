@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-apply plugin: 'org.greenrobot.greendao' // apply plugin greenDao
+//apply plugin: 'org.greenrobot.greendao' // apply plugin greenDao
 
 android {
     compileSdkVersion 28
@@ -32,5 +32,11 @@ dependencies {
     implementation 'com.google.android.gms:play-services-auth:15.0.1'
     // used for login with google accounts
 
-    implementation 'org.greenrobot:greendao:3.2.2' // add library greendao
+  //  implementation 'org.greenrobot:greendao:3.2.2' // add library greendao
+
+    //Para los servicios de room database de android
+    //room
+    def room_version = "1.1.1"
+    implementation "android.arch.persistence.room:runtime:$room_version"
+    annotationProcessor "android.arch.persistence.room:compiler:$room_version"
 }
