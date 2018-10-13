@@ -1,16 +1,14 @@
-package com.example.asd.instafood.daos;
-
+package com.example.asd.instafood.db.dao;
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
 import android.arch.persistence.room.TypeConverters;
 import android.arch.persistence.room.Update;
 
-import com.example.asd.instafood.database.TimestampConverter;
-import com.example.asd.instafood.models.Anunciante;
+import com.example.asd.instafood.db.database.TimestampConverter;
+import com.example.asd.instafood.db.models.Anunciante;
 
 import java.util.List;
-
 
 @TypeConverters(TimestampConverter.class)
 @Dao

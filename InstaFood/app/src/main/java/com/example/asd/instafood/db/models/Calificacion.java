@@ -1,4 +1,4 @@
-package com.example.asd.instafood.models;
+package com.example.asd.instafood.db.models;
 
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Entity;
@@ -7,7 +7,7 @@ import android.arch.persistence.room.PrimaryKey;
 import android.arch.persistence.room.TypeConverters;
 import android.support.annotation.NonNull;
 
-import com.example.asd.instafood.database.TimestampConverter;
+import com.example.asd.instafood.db.database.TimestampConverter;
 
 import java.util.Date;
 
@@ -27,7 +27,7 @@ public class Calificacion
 
     //Llave foranea
     private int restaurante;
-    private String usuarioEmai;
+    private String usuarioEmail;
 
     @TypeConverters({TimestampConverter.class})
     private Date fechaCalificacion;
@@ -38,12 +38,12 @@ public class Calificacion
     private int puntuacionComida;
     private int puntuacionPrecios;
 
-    public Calificacion(@NonNull int idCalificacion, int restaurante, String usuarioEmai,
+    public Calificacion(@NonNull int idCalificacion, int restaurante, String usuarioEmail,
                         Date fechaCalificacion, int puntuacionAtencion, int puntuacionHigiene,
                         int puntuacionTiempo, int puntuacionComida, int puntuacionPrecios) {
         this.idCalificacion = idCalificacion;
         this.restaurante = restaurante;
-        this.usuarioEmai = usuarioEmai;
+        this.usuarioEmail = usuarioEmail;
         this.fechaCalificacion = fechaCalificacion;
         this.puntuacionAtencion = puntuacionAtencion;
         this.puntuacionHigiene = puntuacionHigiene;
@@ -69,12 +69,12 @@ public class Calificacion
         this.restaurante = restaurante;
     }
 
-    public String getUsuarioEmai() {
-        return usuarioEmai;
+    public String getUsuarioEmail() {
+        return usuarioEmail;
     }
 
-    public void setUsuarioEmai(String usuarioEmai) {
-        this.usuarioEmai = usuarioEmai;
+    public void setUsuarioEmail(String usuarioEmai) {
+        this.usuarioEmail = usuarioEmai;
     }
 
     public Date getFechaCalificacion() {

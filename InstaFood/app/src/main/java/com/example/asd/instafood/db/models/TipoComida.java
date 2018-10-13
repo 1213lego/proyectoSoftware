@@ -1,6 +1,5 @@
-package com.example.asd.instafood.models;
+package com.example.asd.instafood.db.models;
 
-import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.Index;
 import android.arch.persistence.room.PrimaryKey;

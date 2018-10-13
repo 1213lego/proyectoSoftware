@@ -1,4 +1,4 @@
-package com.example.asd.instafood.database;
+package com.example.asd.instafood.db.database;
 
 import android.arch.persistence.room.TypeConverter;
 

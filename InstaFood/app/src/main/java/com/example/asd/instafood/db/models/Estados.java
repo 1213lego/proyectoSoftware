@@ -1,4 +1,4 @@
-package com.example.asd.instafood.models;
+package com.example.asd.instafood.db.models;
 
 public class Estados
 {
