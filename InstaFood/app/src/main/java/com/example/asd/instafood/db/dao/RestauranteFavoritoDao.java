@@ -1,5 +1,6 @@
 package com.example.asd.instafood.db.dao;
 
+import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
@@ -21,7 +22,7 @@ public interface RestauranteFavoritoDao
                             "INNER JOIN RestauranteFavorito ON RestauranteFavorito.restaurante=Restaurante.restauranteId where " +
                             "RestauranteFavorito.usuario= :email"
             )
-    List<Restaurante> consultarRestaurantesFavoritosUsuario(String email);
+    LiveData<List<Restaurante>> consultarRestaurantesFavoritosUsuario(String email);
 
     @Insert
     long ingresarRestauranteFavorito(RestauranteFavorito restauranteFavorito);

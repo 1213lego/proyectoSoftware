@@ -4,138 +4,125 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegistroRestauranteActivity">
-
-    <TextView
-        android:id="@+id/labRegistroRestaurante"
-        android:layout_width="0dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="8dp"
-        android:text="Registro de restaurante"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    tools:context=".RegistroRestauranteActivity"
+    tools:layout_editor_absoluteY="81dp">
 
     <TextView
         android:id="@+id/labTipoComida"
-        android:layout_width="180dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="28dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="195dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="158dp"
         android:text="¿Qué tipo de comida sirve tu restaurante? "
+        app:layout_constraintBottom_toTopOf="@+id/labAgregarImagen"
+        app:layout_constraintEnd_toStartOf="@+id/spinnerTipoComida"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTelefono" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/txtTelefono"
-        android:layout_width="wrap_content"
+        android:layout_width="244dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="28dp"
         android:ems="10"
         android:inputType="number"
         android:text="Teléfono"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/spinnerTipoComida"
+        app:layout_constraintEnd_toEndOf="@+id/labTipoComida"
+        app:layout_constraintStart_toEndOf="@+id/labTipoComida"
         app:layout_constraintTop_toBottomOf="@+id/txtNombreRestaurante" />
 
     <EditText
         android:id="@+id/txtNombreRestaurante"
         android:layout_width="240dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="65dp"
+        android:layout_marginBottom="10dp"
         android:baselineAligned="false"
         android:ems="10"
         android:inputType="textPersonName"
         android:singleLine="false"
         android:text="Nombre"
+        app:layout_constraintBottom_toTopOf="@+id/txtTelefono"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/labRegistroRestaurante" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/txtDireccion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="233dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="21dp"
         android:ems="10"
         android:inputType="text"
         android:text="Dirección"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/labTipoComida" />
+        app:layout_constraintBottom_toTopOf="@+id/btnUbicarRestaurante"
+        app:layout_constraintEnd_toEndOf="@+id/labTipoComida"
+        app:layout_constraintStart_toEndOf="@+id/labTipoComida"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerTipoComida" />
 
     <Spinner
         android:id="@+id/spinnerTipoComida"
-        android:layout_width="142dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="6dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="23dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtDireccion"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/labTipoComida"
-        app:layout_constraintTop_toTopOf="@+id/labTipoComida" />
+        app:layout_constraintTop_toBottomOf="@+id/txtTelefono" />
 
     <Button
         android:id="@+id/btnUbicarRestaurante"
         android:layout_width="190dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="8dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="17dp"
         android:text="Ubica el restaurante"
+        app:layout_constraintBottom_toTopOf="@+id/btnExaminarImagen"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtDireccion" />
 
     <TextView
         android:id="@+id/labAgregarImagen"
         android:layout_width="wrap_content"
-        android:layout_height="28dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="73dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginBottom="6dp"
         android:text="Agregar Imagen "
+        app:layout_constraintBottom_toTopOf="@+id/txtDescripcion"
         app:layout_constraintEnd_toStartOf="@+id/btnExaminarImagen"
-        app:layout_constraintHorizontal_bias="0.798"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btnExaminarImagen" />
+        app:layout_constraintTop_toBottomOf="@+id/labTipoComida" />
 
     <Button
         android:id="@+id/btnExaminarImagen"
-        android:layout_width="104dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="96dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="77dp"
+        android:layout_marginBottom="66dp"
         android:text="Examinar"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/labAgregarImagen"
         app:layout_constraintTop_toBottomOf="@+id/btnUbicarRestaurante" />
 
     <EditText
         android:id="@+id/txtDescripcion"
-        android:layout_width="286dp"
-        android:layout_height="88dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="22dp"
         android:ems="10"
         android:inputType="textMultiLine"
         android:text="Descripción"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnExaminarImagen" />
+        app:layout_constraintTop_toBottomOf="@+id/labAgregarImagen" />
 
 </android.support.constraint.ConstraintLayout>

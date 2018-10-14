@@ -39,10 +39,9 @@ public class OpinionRestaurante
     private String comentario;
 
 
-    public OpinionRestaurante(@NonNull int idOpinion, @NonNull String usuarioEmail,
+    public OpinionRestaurante( @NonNull String usuarioEmail,
                               @NonNull int restaurante, @NonNull Date fechaOpnion, @NonNull String comentario)
     {
-        this.idOpinion = idOpinion;
         this.usuarioEmail = usuarioEmail;
         this.restaurante = restaurante;
         this.fechaOpnion = fechaOpnion;

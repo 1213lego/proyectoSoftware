@@ -70,7 +70,7 @@
 
         <activity
             android:name=".RegistroRestauranteActivity"
-            android:label="Resgitra tu Resturante">
+            android:label="Registra tu Resturante">
         </activity>
     </application>
 

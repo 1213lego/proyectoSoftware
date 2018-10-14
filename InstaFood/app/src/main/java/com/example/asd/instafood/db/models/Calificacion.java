@@ -38,10 +38,10 @@ public class Calificacion
     private int puntuacionComida;
     private int puntuacionPrecios;
 
-    public Calificacion(@NonNull int idCalificacion, int restaurante, String usuarioEmail,
+    public Calificacion( int restaurante, String usuarioEmail,
                         Date fechaCalificacion, int puntuacionAtencion, int puntuacionHigiene,
-                        int puntuacionTiempo, int puntuacionComida, int puntuacionPrecios) {
-        this.idCalificacion = idCalificacion;
+                        int puntuacionTiempo, int puntuacionComida, int puntuacionPrecios)
+    {
         this.restaurante = restaurante;
         this.usuarioEmail = usuarioEmail;
         this.fechaCalificacion = fechaCalificacion;

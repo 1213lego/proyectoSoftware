@@ -102,4 +102,14 @@ public class Usuario {
     public void setRutaFoto(@Nullable String rutaFoto) {
         this.rutaFoto = rutaFoto;
     }
+
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", estado=" + estado +
+                ", tipoUsuario=" + tipoUsuario +
+                '}';
+    }
 }

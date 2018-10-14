@@ -48,12 +48,11 @@ public class Restaurante
     @Nullable
     private String rutaFotoRestaurante;
 
-    public Restaurante(@NonNull int restauranteId, @NonNull int anunciante, @NonNull int tipoComida,
+    public Restaurante( @NonNull int anunciante, @NonNull int tipoComida,
                        @NonNull String nombreRestaurante, @NonNull String telefonoRestaurante, @NonNull String descripcionRestaurante,
                        @NonNull double latitud, @NonNull double longitud, @NonNull String direccionRestaurante,
                        @Nullable String rutaFotoRestaurante)
     {
-        this.restauranteId = restauranteId;
         this.anunciante = anunciante;
         this.tipoComida = tipoComida;
         this.nombreRestaurante = nombreRestaurante;

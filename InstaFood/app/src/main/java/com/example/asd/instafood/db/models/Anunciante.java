@@ -26,9 +26,8 @@ public class Anunciante
     @TypeConverters({TimestampConverter.class})
     private Date fechaSuscripcion;
 
-    public Anunciante(int idAnunciante, String emailUsuario, double preciooSucripcion, Date fechaSuscripcion)
+    public Anunciante(String emailUsuario, double preciooSucripcion, Date fechaSuscripcion)
     {
-        this.idAnunciante = idAnunciante;
         this.emailUsuario = emailUsuario;
         this.preciooSucripcion = preciooSucripcion;
         this.fechaSuscripcion = fechaSuscripcion;

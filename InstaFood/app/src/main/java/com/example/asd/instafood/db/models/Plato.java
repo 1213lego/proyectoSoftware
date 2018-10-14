@@ -27,9 +27,9 @@ public class Plato
     @NonNull
     private String rutaFotoPlato;
 
-    public Plato(@NonNull int idPlato, @NonNull int restaurante, @NonNull String nombrePlato,
-                 @NonNull String descripcion, @NonNull String rutaFotoPlato) {
-        this.idPlato = idPlato;
+    public Plato( @NonNull int restaurante, @NonNull String nombrePlato,
+                 @NonNull String descripcion, @NonNull String rutaFotoPlato)
+    {
         this.restaurante = restaurante;
         this.nombrePlato = nombrePlato;
         this.descripcion = descripcion;

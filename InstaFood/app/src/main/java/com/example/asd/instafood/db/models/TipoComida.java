@@ -17,8 +17,8 @@ public class TipoComida
     @NonNull
     public String nombreTipoComida;
 
-    public TipoComida(int iDtipoComida, @NonNull String nombreTipoComida) {
-        this.iDtipoComida = iDtipoComida;
+    public TipoComida(@NonNull String nombreTipoComida)
+    {
         this.nombreTipoComida = nombreTipoComida;
     }
 
@@ -37,5 +37,11 @@ public class TipoComida
 
     public void setNombreTipoComida(@NonNull String nombreTipoComida) {
         this.nombreTipoComida = nombreTipoComida;
+    }
+
+    @Override
+    public String toString()
+    {
+        return nombreTipoComida;
     }
 }

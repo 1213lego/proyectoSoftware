@@ -1,4 +1,5 @@
 package com.example.asd.instafood.db.dao;
+import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
@@ -15,15 +16,15 @@ import java.util.List;
 public interface AnuncianteDao
 {
     @Query("select * from Anunciante")
-    List<Anunciante> consultarAnunciantes();
+    LiveData<List<Anunciante>> consultarAnunciantes();
 
     @Query("select * from Anunciante where emailUsuario* :email")
-    Anunciante consultarAnuncianteEmail(String email);
+    LiveData<Anunciante> consultarAnuncianteEmail(String email);
 
     @Insert
-    long insertarAnunciante(Anunciante anunciante);
+    long ingresarAnunciante(Anunciante anunciante);
 
     @Update
-    void actulizarAnunciante(Anunciante anunciante);
+    void actualizarAnunciante(Anunciante anunciante);
 
 }
