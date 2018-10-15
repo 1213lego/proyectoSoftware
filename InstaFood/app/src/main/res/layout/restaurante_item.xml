@@ -7,18 +7,18 @@
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="112dp"
+        android:layout_height="80dp"
         android:theme="@style/AppTheme">
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="3dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="18dp"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/telefonoRestaurante"
+            android:layout_height="36dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginBottom="11dp"
+            app:layout_constraintBottom_toTopOf="@+id/direccionRestaurante"
             app:layout_constraintEnd_toStartOf="@+id/tituloRestaurante"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -28,61 +28,48 @@
             android:id="@+id/telefonoRestaurante"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="241dp"
-            android:layout_marginBottom="6dp"
+            android:layout_marginEnd="133dp"
+            android:layout_marginBottom="5dp"
             android:text="telefono"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/direccionRestaurante"
-            app:layout_constraintStart_toEndOf="@+id/guideline"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-        <android.support.constraint.Guideline
-            android:id="@+id/guideline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="15dp"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toStartOf="@+id/telefonoRestaurante"
-            app:layout_constraintGuide_begin="80dp"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toEndOf="@+id/direccionRestaurante"
+            app:layout_constraintTop_toBottomOf="@+id/descripcionRestaurante" />
 
         <TextView
             android:id="@+id/direccionRestaurante"
             android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginEnd="70dp"
-            android:layout_marginBottom="11dp"
+            android:layout_height="23dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="5dp"
             android:text="direccion"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/telefonoRestaurante"
-            app:layout_constraintTop_toBottomOf="@+id/descripcionRestaurante" />
+            app:layout_constraintEnd_toStartOf="@+id/telefonoRestaurante"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
         <TextView
             android:id="@+id/tituloRestaurante"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="99dp"
-            android:layout_marginBottom="56dp"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="34dp"
             android:text="titulo"
-            app:layout_constraintBottom_toTopOf="@+id/direccionRestaurante"
+            app:layout_constraintBottom_toTopOf="@+id/descripcionRestaurante"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageView"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/descripcionRestaurante"
-            android:layout_width="218dp"
+            android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginTop="22dp"
-            android:layout_marginBottom="7dp"
+            android:layout_marginBottom="4dp"
             android:text="descripcion"
-            app:layout_constraintBottom_toTopOf="@+id/direccionRestaurante"
+            app:layout_constraintBottom_toTopOf="@+id/telefonoRestaurante"
+            app:layout_constraintEnd_toEndOf="@+id/tituloRestaurante"
             app:layout_constraintStart_toStartOf="@+id/tituloRestaurante"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/tituloRestaurante" />
     </android.support.constraint.ConstraintLayout>
 </android.support.v7.widget.CardView>

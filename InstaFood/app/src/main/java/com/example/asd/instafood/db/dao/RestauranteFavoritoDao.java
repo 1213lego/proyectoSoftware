@@ -19,8 +19,8 @@ public interface RestauranteFavoritoDao
     @Query
             (
                     "select * from Restaurante " +
-                            "INNER JOIN RestauranteFavorito ON RestauranteFavorito.restaurante=Restaurante.restauranteId where " +
-                            "RestauranteFavorito.usuario= :email"
+                            "INNER JOIN RestauranteFavorito where " +
+                            "RestauranteFavorito.usuario= :email and Restaurante.restauranteId = RestauranteFavorito.restaurante"
             )
     LiveData<List<Restaurante>> consultarRestaurantesFavoritosUsuario(String email);
 

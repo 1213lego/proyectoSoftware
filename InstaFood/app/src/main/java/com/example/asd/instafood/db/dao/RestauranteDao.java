@@ -7,6 +7,7 @@ import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
 import android.arch.persistence.room.Update;
 
+import com.example.asd.instafood.db.models.Plato;
 import com.example.asd.instafood.db.models.Restaurante;
 
 import java.util.List;
@@ -19,6 +20,9 @@ public interface RestauranteDao
 
     @Query("select *from Restaurante where nombreRestaurante= :nombreRes")
     LiveData<List<Restaurante>> consultarRestauranteNombre(String nombreRes);
+
+    @Query("select * from Plato where Plato.restaurante = :id ")
+    LiveData<List<Plato>>  consultarPlatosRestaurante(int id);
 
     @Insert
     long ingresarRestaurante(Restaurante restaurante);

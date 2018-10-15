@@ -19,8 +19,8 @@ public interface OpinionRestauranteDao
     @Query("select * from OpinionRestaurante where usuarioEmail= :email")
     LiveData<List<OpinionRestaurante>> consultarOpinionesPorEmail(String email);
 
-    @Query("select * from OpinionRestaurante INNER JOIN Restaurante on Restaurante.restauranteId= OpinionRestaurante.restaurante " +
-            "where Restaurante.nombreRestaurante= :nombre" )
+    @Query("select * from OpinionRestaurante INNER JOIN Restaurante " +
+            "where Restaurante.nombreRestaurante= :nombre and OpinionRestaurante.restaurante=Restaurante.restauranteId" )
     LiveData<List<OpinionRestaurante>> consultarOpinionesPorRestaurante(String nombre);
 
     @Insert

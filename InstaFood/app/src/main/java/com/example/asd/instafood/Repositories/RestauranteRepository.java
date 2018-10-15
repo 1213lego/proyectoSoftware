@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 
 import com.example.asd.instafood.db.dao.RestauranteDao;
 import com.example.asd.instafood.db.database.DatabaseInstafood;
+import com.example.asd.instafood.db.models.Plato;
 import com.example.asd.instafood.db.models.Restaurante;
 
 import java.util.List;
@@ -25,9 +26,14 @@ public class RestauranteRepository
     {
         return restaurantes;
     }
+
     public LiveData<List<Restaurante>> darRestaurantePorNombre(String nomnre)
     {
         return restauranteDao.consultarRestauranteNombre(nomnre);
+    }
+    public LiveData<List<Plato>> darPlatosRestaurante(int id)
+    {
+        return restauranteDao.consultarPlatosRestaurante(id);
     }
 
     public void ingresarRestaurante(Restaurante restaurante)

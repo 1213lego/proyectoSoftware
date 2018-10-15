@@ -5,6 +5,7 @@ import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
 import android.support.annotation.NonNull;
 
+import com.example.asd.instafood.db.models.Plato;
 import com.example.asd.instafood.db.models.Restaurante;
 import com.example.asd.instafood.Repositories.RestauranteRepository;
 import java.util.List;
@@ -13,6 +14,7 @@ public class RestauranteViewModel extends AndroidViewModel
 {
     private RestauranteRepository restauranteRespository;
     private LiveData<List<Restaurante>> restaurantes;
+
     public RestauranteViewModel(@NonNull Application application)
     {
         super(application);
@@ -23,10 +25,17 @@ public class RestauranteViewModel extends AndroidViewModel
     {
         return  restaurantes;
     }
+
     public LiveData<List<Restaurante>> darRestaurantePorNombre(String nomnre)
     {
         return restauranteRespository.darRestaurantePorNombre(nomnre);
     }
+    public LiveData<List<Plato>>  darPlatosRestaurante(int id)
+    {
+        return restauranteRespository.darPlatosRestaurante(id);
+    }
+
+
     public void eliminarRestaurante(Restaurante restaurante)
     {
         restauranteRespository.eliminarRestaurante(restaurante);
