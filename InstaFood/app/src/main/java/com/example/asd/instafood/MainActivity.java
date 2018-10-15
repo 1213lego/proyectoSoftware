@@ -46,15 +46,16 @@ public class MainActivity extends AppCompatActivity
         }
         else if(view.getId()==R.id.btnVistaRes)
         {
-            UsuarioViewModel usuarioViewModel= ViewModelProviders.of(this).get(UsuarioViewModel.class);
+            /*UsuarioViewModel usuarioViewModel= ViewModelProviders.of(this).get(UsuarioViewModel.class);
             usuarioViewModel.darUsuarios().observe(this, new Observer<List<Usuario>>() {
                 @Override
                 public void onChanged(@Nullable List<Usuario> notes) {
 
 
                 }
-            });
-            Intent intent=new Intent(this,RegistroRestauranteActivity.class);
+            });*/
+            Intent intent=new Intent(this,UsuarioActivity.class);
+            intent.putExtra("Email","usuario1@usuario1.com");
             startActivity(intent);
         }
     }

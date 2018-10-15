@@ -5,12 +5,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class AnuncianteActivity extends AppCompatActivity {
+import com.example.asd.instafood.ViewModels.UsuarioViewModel;
+
+public class AnuncianteActivity extends AppCompatActivity
+{
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_anunciante);
+        Intent intent=getIntent();
     }
 
     public void openRegister(View view)

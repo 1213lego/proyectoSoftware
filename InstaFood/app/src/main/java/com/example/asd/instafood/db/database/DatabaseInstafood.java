@@ -212,8 +212,9 @@ public abstract class DatabaseInstafood extends RoomDatabase
 
             RestauranteFavorito restauranteFavorito= new RestauranteFavorito(restauranteId1,usuario1.getEmail());
             restauranteFavoritoDao.ingresarRestauranteFavorito(restauranteFavorito);
-            RestauranteFavorito restauranteFavorito1= new RestauranteFavorito(restauranteId2,usuario2.getEmail());
-            restauranteFavoritoDao.ingresarRestauranteFavorito(restauranteFavorito1);
+
+            RestauranteFavorito restauranteFavorito2= new RestauranteFavorito(restauranteId2,usuario2.getEmail());
+            restauranteFavoritoDao.ingresarRestauranteFavorito(restauranteFavorito2);
 
             return null;
         }

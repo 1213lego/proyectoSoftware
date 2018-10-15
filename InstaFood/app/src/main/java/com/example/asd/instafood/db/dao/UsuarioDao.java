@@ -23,10 +23,7 @@ public interface UsuarioDao
     @Query("select * from Usuario")
     LiveData<List<Usuario>> consultarTodosLosUsuario();
 
-    @Query("select * from Usuario where email= :emailUsuario")
-    LiveData<Usuario> consultarPorEmail(String emailUsuario);
-
-
-
+    @Query("select * from Usuario where email= :email LIMIT 1")
+    LiveData<Usuario> consultarPorEmail(String email);
 
 }
