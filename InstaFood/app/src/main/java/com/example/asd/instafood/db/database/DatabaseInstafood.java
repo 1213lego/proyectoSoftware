@@ -158,6 +158,14 @@ public abstract class DatabaseInstafood extends RoomDatabase
                     "fefefdsfdsfdsf","eeeeeee");
             int restauranteId2= (int) restauranteDao.ingresarRestaurante(restaurante2);
 
+            Restaurante restaurante3= new Restaurante(idAnunciante2,id4,"Carnaval del pollo",
+                    "1775187157","Pollos y conejo", 4.425716 ,-75.190868,
+                    "av mirolindo","pollo");
+            int restauranteId3= (int) restauranteDao.ingresarRestaurante(restaurante3);
+
+
+
+
             //ingreso 3 platos al restaurante1
             Plato plato= new Plato(restauranteId1,"Hamburguesa","dsdsdsd","foto");
             platoDao.ingresarPlato(plato);
@@ -216,8 +224,12 @@ public abstract class DatabaseInstafood extends RoomDatabase
             RestauranteFavorito restauranteFavorito1= new RestauranteFavorito(restauranteId2,usuario1.getEmail());
             restauranteFavoritoDao.ingresarRestauranteFavorito(restauranteFavorito1);
 
-            RestauranteFavorito restauranteFavorito2= new RestauranteFavorito(restauranteId2,usuario2.getEmail());
-            restauranteFavoritoDao.ingresarRestauranteFavorito(restauranteFavorito2);
+            RestauranteFavorito restauranteFavorito3= new RestauranteFavorito(restauranteId3,usuario1.getEmail());
+            restauranteFavoritoDao.ingresarRestauranteFavorito(restauranteFavorito3);
+
+
+            RestauranteFavorito restauranteFavorito7= new RestauranteFavorito(restauranteId2,usuario2.getEmail());
+            restauranteFavoritoDao.ingresarRestauranteFavorito(restauranteFavorito7);
 
             return null;
         }

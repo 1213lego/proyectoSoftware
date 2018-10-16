@@ -1,4 +1,4 @@
-package com.example.asd.instafood;
+package com.example.asd.instafood.RecyclerViewsAdapters;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -8,12 +8,13 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.asd.instafood.R;
 import com.example.asd.instafood.db.models.Restaurante;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class RestauranteAdapter extends RecyclerView.Adapter<RestauranteAdapter.RestauranteHolder>
+public class RestauranteFavoritoAdapter extends RecyclerView.Adapter<RestauranteFavoritoAdapter.RestauranteHolder>
 {
     private List<Restaurante> restaurantes= new ArrayList<>();
 

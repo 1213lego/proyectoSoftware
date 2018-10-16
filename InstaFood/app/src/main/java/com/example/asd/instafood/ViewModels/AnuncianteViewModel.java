@@ -7,6 +7,7 @@ import android.support.annotation.NonNull;
 
 import com.example.asd.instafood.Repositories.AnuncianteRepository;
 import com.example.asd.instafood.db.models.Anunciante;
+import com.example.asd.instafood.db.models.Restaurante;
 
 import java.util.List;
 
@@ -37,5 +38,9 @@ public class AnuncianteViewModel extends AndroidViewModel
     public void ingresarAnunciante(Anunciante anunciante)
     {
         anuncianteRespository.ingresarAnunciante(anunciante);
+    }
+    public LiveData<List<Restaurante>>  darRestaurantesAnunciante(int id)
+    {
+        return  anuncianteRespository.darRestaurantesAnunciante(id);
     }
 }

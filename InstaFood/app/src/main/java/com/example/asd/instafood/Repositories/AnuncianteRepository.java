@@ -7,6 +7,7 @@ import android.os.AsyncTask;
 import com.example.asd.instafood.db.dao.AnuncianteDao;
 import com.example.asd.instafood.db.database.DatabaseInstafood;
 import com.example.asd.instafood.db.models.Anunciante;
+import com.example.asd.instafood.db.models.Restaurante;
 
 import java.util.List;
 
@@ -20,6 +21,10 @@ public class AnuncianteRepository
         DatabaseInstafood databaseInstafood= DatabaseInstafood.getInstance(application);
         anuncianteDao=databaseInstafood.anunciantes();
         anunciantes=anuncianteDao.consultarAnunciantes();
+    }
+    public LiveData<List<Restaurante>>  darRestaurantesAnunciante(int id)
+    {
+        return  anuncianteDao.darListaResturantesAnunciante(id);
     }
     public void acualizarAnunciante(Anunciante anunciante)
     {

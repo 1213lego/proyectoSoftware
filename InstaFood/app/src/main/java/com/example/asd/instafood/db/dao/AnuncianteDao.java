@@ -8,6 +8,7 @@ import android.arch.persistence.room.Update;
 
 import com.example.asd.instafood.db.database.TimestampConverter;
 import com.example.asd.instafood.db.models.Anunciante;
+import com.example.asd.instafood.db.models.Restaurante;
 
 import java.util.List;
 
@@ -20,6 +21,9 @@ public interface AnuncianteDao
 
     @Query("select * from Anunciante where emailUsuario* :email")
     LiveData<Anunciante> consultarAnuncianteEmail(String email);
+
+    @Query("select * from Restaurante where Restaurante.anunciante= :id")
+    LiveData<List<Restaurante>> darListaResturantesAnunciante(int id);
 
     @Insert
     long ingresarAnunciante(Anunciante anunciante);

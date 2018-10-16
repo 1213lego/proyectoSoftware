@@ -12,8 +12,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.example.asd.instafood.RecyclerViewsAdapters.RestauranteFavoritoAdapter;
 import com.example.asd.instafood.ViewModels.RestauranteFavoritoViewModel;
 import com.example.asd.instafood.ViewModels.UsuarioViewModel;
 import com.example.asd.instafood.db.models.Restaurante;
@@ -44,7 +44,6 @@ public class UsuarioActivity extends AppCompatActivity
 
         Intent intent=getIntent();
         emailUsuario=intent.getStringExtra("Email");
-        Toast.makeText(this,emailUsuario,Toast.LENGTH_LONG).show();
 
         recyclerView=findViewById(R.id.recyclerViewResFavoritos);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -56,14 +55,14 @@ public class UsuarioActivity extends AppCompatActivity
         apellido= findViewById(R.id.txtApellidos);
         btnBuscarRes=(Button) findViewById(R.id.btnBuscarRestaurantes);
        
-        cargarUsuario(emailUsuario);
-        cargarRestaurantesFavoritos(emailUsuario);
+        cargarUsuario();
+        cargarRestaurantesFavoritos();
 
     }
 
-    private void cargarRestaurantesFavoritos(String emailUsuario)
+    private void cargarRestaurantesFavoritos()
     {
-        final RestauranteAdapter restauranteAdapter= new RestauranteAdapter();
+        final RestauranteFavoritoAdapter restauranteAdapter= new RestauranteFavoritoAdapter();
         recyclerView.setAdapter(restauranteAdapter);
         restauranteFavoritoViewModel.darRestaurantesFavoritosEmail(emailUsuario).observe(this, new Observer<List<Restaurante>>()
         {
@@ -79,16 +78,16 @@ public class UsuarioActivity extends AppCompatActivity
         });
     }
 
-    private void cargarUsuario(String correo)
+    private void cargarUsuario()
     {
-        usuarioViewModel.darUsuarioPorEmail(correo).observe(this, new Observer<Usuario>() {
+        usuarioViewModel.darUsuarioPorEmail(emailUsuario).observe(this, new Observer<Usuario>() {
             @Override
             public void onChanged(@Nullable Usuario usuario) {
                 cargarValoresUsuario(usuario);
             }
         });
     }
-    public void cargarValoresUsuario(Usuario usuario)
+    private void cargarValoresUsuario(Usuario usuario)
     {
         email.setText(usuario.getEmail());
         nombre.setText(usuario.getNombre());
