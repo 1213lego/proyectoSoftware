@@ -12,21 +12,11 @@ import com.example.asd.instafood.db.models.Plato;
 import java.util.List;
 
 @Dao
-public interface PlatoDao
+public interface PlatoDao extends IDao<Plato>
 {
-
     @Query("select * from Plato")
     LiveData<List<Plato>> consultarPlatos();
 
     @Query("select * from Plato where nombrePlato= :nombre")
     LiveData<List<Plato>> consultarPorNombre(String nombre);
-
-    @Insert
-    long ingresarPlato(Plato plato);
-
-    @Update
-    void actualizarPlato(Plato plato);
-
-    @Delete
-    void eliminarPlato(Plato plato);
 }

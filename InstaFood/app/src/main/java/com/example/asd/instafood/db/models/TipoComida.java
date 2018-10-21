@@ -9,7 +9,7 @@ import android.support.annotation.NonNull;
         (
                 indices = @Index(value = "nombreTipoComida",unique = true)
         )
-public class TipoComida
+public class TipoComida implements IDto
 {
     @PrimaryKey(autoGenerate = true)
     public int iDtipoComida;

@@ -1,11 +1,11 @@
-package com.example.asd.instafood;
+package com.example.asd.instafood.UI;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.asd.instafood.ViewModels.UsuarioViewModel;
+import com.example.asd.instafood.R;
 
 public class AnuncianteActivity extends AppCompatActivity
 {

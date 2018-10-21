@@ -19,7 +19,7 @@ import android.support.annotation.Nullable;
                                 @ForeignKey(entity = TipoComida.class, parentColumns = "iDtipoComida", childColumns = "tipoComida")
                         }
         )
-public class Restaurante
+public class Restaurante implements IDto
 {
     @NonNull
     @ColumnInfo(name = "restauranteId")

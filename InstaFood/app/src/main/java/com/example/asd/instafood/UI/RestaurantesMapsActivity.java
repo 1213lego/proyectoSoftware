@@ -1,11 +1,14 @@
-package com.example.asd.instafood;
+package com.example.asd.instafood.UI;
 
+import android.arch.lifecycle.Observer;
+import android.arch.lifecycle.ViewModelProviders;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.ColorInt;
 import android.support.annotation.DrawableRes;
+import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.content.res.ResourcesCompat;
@@ -17,6 +20,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.asd.instafood.R;
+import com.example.asd.instafood.ViewModels.RestaurantesMapsViewModel;
+import com.example.asd.instafood.db.models.Restaurante;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -27,11 +33,15 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.List;
+
 public class RestaurantesMapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener, GoogleMap.OnInfoWindowClickListener
     , GoogleMap.OnInfoWindowCloseListener, GoogleMap.OnInfoWindowLongClickListener
 {
 
     private GoogleMap mMap;
+
+    private RestaurantesMapsViewModel restaurantesMapsViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -44,6 +54,7 @@ public class RestaurantesMapsActivity extends FragmentActivity implements OnMapR
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
+        restaurantesMapsViewModel=ViewModelProviders.of(this).get(RestaurantesMapsViewModel.class);
 
     }
 
@@ -81,7 +92,7 @@ public class RestaurantesMapsActivity extends FragmentActivity implements OnMapR
         markerOptionsUnibague.title("Universidadad de Ibague");
         markerOptionsUnibague.icon(BitmapDescriptorFactory.fromResource(R.drawable.iconrestaurante));
         Marker markerUnibague= mMap.addMarker(markerOptionsUnibague);
-        markerOptionsUnibague.title("prueb");
+        markerOptionsUnibague.title("prueba");
         mMap.moveCamera(CameraUpdateFactory.newLatLng(unibague));
 
 
@@ -92,6 +103,21 @@ public class RestaurantesMapsActivity extends FragmentActivity implements OnMapR
         markerOptionsToroRojo.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE));
         Marker markerToroRojo= mMap.addMarker(markerOptionsToroRojo);
         mMap.moveCamera(CameraUpdateFactory.newLatLng(toroRojo));
+
+        restaurantesMapsViewModel.darLiveDataRestaurantes().observe(this, new Observer<List<Restaurante>>() {
+            @Override
+            public void onChanged(@Nullable List<Restaurante> restauranteList) {
+                for(int i=0 ; i<restauranteList.size();i++)
+                {
+                    LatLng latLng= new LatLng(restauranteList.get(i).getLatitud(),restauranteList.get(i).getLongitud());
+                    MarkerOptions markerOptions= new MarkerOptions().position(latLng);
+                    markerOptions.title(restauranteList.get(i).getNombreRestaurante());
+                    markerOptions.snippet(restauranteList.get(i).getDescripcionRestaurante());
+                    markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.iconrestaurante));
+                    mMap.addMarker(markerOptions);
+                }
+            }
+        });
     }
 
     @Override

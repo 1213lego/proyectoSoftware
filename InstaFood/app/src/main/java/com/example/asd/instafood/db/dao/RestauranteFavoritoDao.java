@@ -14,7 +14,7 @@ import com.example.asd.instafood.db.models.RestauranteFavorito;
 import java.util.List;
 
 @Dao
-public interface RestauranteFavoritoDao
+public interface RestauranteFavoritoDao extends IDao<RestauranteFavorito>
 {
     @Query
             (
@@ -24,12 +24,4 @@ public interface RestauranteFavoritoDao
             )
     LiveData<List<Restaurante>> consultarRestaurantesFavoritosUsuario(String email);
 
-    @Insert
-    long ingresarRestauranteFavorito(RestauranteFavorito restauranteFavorito);
-
-    @Update
-    void actualizarRestauranteFavorito(RestauranteFavorito restauranteFavorito);
-
-    @Delete
-    void eliminarRestauranteFavorito(RestauranteFavorito restauranteFavorito);
 }

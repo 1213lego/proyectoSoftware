@@ -13,16 +13,8 @@ import com.example.asd.instafood.db.models.TipoComida;
 import java.util.List;
 
 @Dao
-public interface TipoComidaDao
+public interface TipoComidaDao extends IDao<TipoComida>
 {
     @Query("select * from TipoComida")
     LiveData<List<TipoComida>> consultarTiposComida();
-
-    @Insert
-    long ingresarTipoComida(TipoComida tipoComida);
-
-    @Update
-    void actualizarTipoComida(TipoComida tipoComida);
-    @Delete
-    void eliminar(TipoComida tipoComida);
 }

@@ -1,32 +1,22 @@
-package com.example.asd.instafood;
+package com.example.asd.instafood.UI;
 
-import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.Observer;
-import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
-
-import com.example.asd.instafood.ViewModels.UsuarioViewModel;
-import com.example.asd.instafood.db.database.DatabaseInstafood;
-import com.example.asd.instafood.db.models.Usuario;
-
-import java.io.ByteArrayOutputStream;
-import java.util.List;
-
-
+import com.example.asd.instafood.R;
+import com.example.asd.instafood.Repositories.Repository;
 public class MainActivity extends AppCompatActivity
 {
 
     private Button btnMap, btnvistaRestaurante,btnRegistrarse, btnIniciarSesion;
-
+    private TextView textView;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -35,8 +25,10 @@ public class MainActivity extends AppCompatActivity
         btnMap=(Button) findViewById(R.id.btnMap);
         btnIniciarSesion = (Button)findViewById(R.id.btnIniciarSesion);
         btnRegistrarse = (Button)findViewById(R.id.btnRegistrarse);
-    }
+        textView=findViewById(R.id.textCantidad);
+        Repository repository= new Repository(getApplication());
 
+    }
     public void openMap(View view)
     {
         if(view.getId()==R.id.btnMap)
@@ -46,18 +38,11 @@ public class MainActivity extends AppCompatActivity
         }
         else if(view.getId()==R.id.btnVistaRes)
         {
-            /*UsuarioViewModel usuarioViewModel= ViewModelProviders.of(this).get(UsuarioViewModel.class);
-            usuarioViewModel.darUsuarios().observe(this, new Observer<List<Usuario>>() {
-                @Override
-                public void onChanged(@Nullable List<Usuario> notes) {
-
-
-                }
-            });*/
-            Intent intent=new Intent(this,UsuarioActivity.class);
+            Intent intent=new Intent(this,RegistroRestauranteActivity.class);
             intent.putExtra("Email","usuario1@usuario1.com");
             startActivity(intent);
         }
+        Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
     }
 
     public void toast(String mensaje)

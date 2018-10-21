@@ -11,7 +11,7 @@ import android.support.annotation.Nullable;
         (
                 indices = @Index(value ={ "email"},unique = true)
         )
-public class Usuario {
+public class Usuario implements  IDto{
     @ColumnInfo(name = "email")
     @NonNull
     @PrimaryKey
@@ -106,6 +106,7 @@ public class Usuario {
     @Override
     public String toString() {
         return "Usuario{" +
+                "Email " + email+
                 "nombre='" + nombre + '\'' +
                 ", apellido='" + apellido + '\'' +
                 ", estado=" + estado +

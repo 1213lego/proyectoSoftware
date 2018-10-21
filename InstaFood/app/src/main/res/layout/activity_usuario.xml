@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UsuarioActivity">
+    tools:context=".UI.UsuarioActivity">
 
     <LinearLayout
         android:id="@+id/layoutAll"
@@ -100,6 +100,9 @@
                 android:id="@+id/recyclerViewResFavoritos"
                 android:layout_width="match_parent"
                 android:layout_height="500dp"
+                android:fadeScrollbars="false"
+                android:soundEffectsEnabled="false"
+                app:fastScrollEnabled="false"
                 tools:listitem="@layout/restaurante_item" />
 
         </LinearLayout>

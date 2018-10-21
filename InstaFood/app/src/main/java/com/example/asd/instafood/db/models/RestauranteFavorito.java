@@ -13,7 +13,7 @@ import android.support.annotation.NonNull;
                                 @ForeignKey(entity = Restaurante.class,parentColumns = "restauranteId", childColumns = "restaurante")
                         }
         )
-public class RestauranteFavorito
+public class RestauranteFavorito implements IDto
 {
     @NonNull
     private int restaurante;

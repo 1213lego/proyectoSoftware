@@ -15,7 +15,7 @@ import java.util.Date;
                 indices = @Index(value = {"idAnunciante", "emailUsuario"}, unique = true),
                 foreignKeys = @ForeignKey(entity = Usuario.class, parentColumns ="email", childColumns = "emailUsuario")
         )
-public class Anunciante
+public class Anunciante implements IDto
 {
     @PrimaryKey(autoGenerate = true)
     private int idAnunciante;

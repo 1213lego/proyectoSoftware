@@ -1,6 +1,5 @@
 package com.example.asd.instafood.db.models;
 
-import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
@@ -19,7 +18,7 @@ import java.util.Date;
                 }
 
 )
-public class Calificacion
+public class Calificacion implements IDto
 {
     @NonNull
     @PrimaryKey(autoGenerate = true)

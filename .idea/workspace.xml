@@ -15,7 +15,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="87899e04-74f4-4887-add7-f9f250c16b6d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InstaFood/app/src/main/java/com/example/asd/instafood/db/models/Idto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InstaFood/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/InstaFood/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InstaFood/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/InstaFood/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InstaFood/app/src/main/java/com/example/asd/instafood/RecyclerViewsAdapters/RestauranteFavoritoAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/InstaFood/app/src/main/java/com/example/asd/instafood/RecyclerViewsAdapters/RestauranteFavoritoAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InstaFood/app/src/main/java/com/example/asd/instafood/Repositories/AnuncianteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/InstaFood/app/src/main/java/com/example/asd/instafood/Repositories/AnuncianteRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InstaFood/app/src/main/java/com/example/asd/instafood/RestaurantesMapsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/InstaFood/app/src/main/java/com/example/asd/instafood/RestaurantesMapsActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InstaFood/app/src/main/java/com/example/asd/instafood/UsuarioActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/InstaFood/app/src/main/java/com/example/asd/instafood/UsuarioActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InstaFood/app/src/main/java/com/example/asd/instafood/db/dao/AnuncianteDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/InstaFood/app/src/main/java/com/example/asd/instafood/db/dao/AnuncianteDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InstaFood/app/src/main/java/com/example/asd/instafood/db/database/DatabaseInstafood.java" beforeDir="false" afterPath="$PROJECT_DIR$/InstaFood/app/src/main/java/com/example/asd/instafood/db/database/DatabaseInstafood.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InstaFood/app/src/main/java/com/example/asd/instafood/db/models/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/InstaFood/app/src/main/java/com/example/asd/instafood/db/models/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InstaFood/app/src/main/res/layout/activity_usuario.xml" beforeDir="false" afterPath="$PROJECT_DIR$/InstaFood/app/src/main/res/layout/activity_usuario.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InstaFood/app/src/main/res/layout/restaurante_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/InstaFood/app/src/main/res/layout/restaurante_item.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InstaFood/app/src/main/res/values/dimens.xml" beforeDir="false" afterPath="$PROJECT_DIR$/InstaFood/app/src/main/res/values/dimens.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InstaFood/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/InstaFood/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,7 +38,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
@@ -41,15 +54,14 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="10" />
     <option name="y" value="20" />
-    <option name="width" value="1346" />
-    <option name="height" value="688" />
+    <option name="width" value="1347" />
+    <option name="height" value="689" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
@@ -118,11 +130,12 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/InstaFood" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RunDashboard">
@@ -221,7 +234,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
       <window_info anchor="bottom" id="Android Profiler" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="TODO" order="11" sideWeight="0.49319214" weight="0.38527396" />
@@ -237,7 +250,7 @@
       <window_info id="Captures" order="6" weight="0.25" />
       <window_info id="Capture Tool" order="1" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="4" sideWeight="0.4889435" visible="true" weight="0.25416037" />
+      <window_info active="true" content_ui="combo" id="Project" order="4" sideWeight="0.4889435" visible="true" weight="0.2536913" />
       <window_info id="Structure" order="5" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="2" />

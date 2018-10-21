@@ -19,7 +19,7 @@ import java.util.Date;
                         }
 
         )
-public class OpinionRestaurante
+public class OpinionRestaurante implements IDto
 {
     @NonNull
     @PrimaryKey(autoGenerate = true)

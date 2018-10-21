@@ -1,6 +1,7 @@
 package com.example.asd.instafood.db.dao;
 import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.Dao;
+import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
 import android.arch.persistence.room.TypeConverters;
@@ -14,7 +15,7 @@ import java.util.List;
 
 @TypeConverters(TimestampConverter.class)
 @Dao
-public interface AnuncianteDao
+public interface AnuncianteDao extends IDao<Anunciante>
 {
     @Query("select * from Anunciante")
     LiveData<List<Anunciante>> consultarAnunciantes();
@@ -24,11 +25,5 @@ public interface AnuncianteDao
 
     @Query("select * from Restaurante where Restaurante.anunciante= :id")
     LiveData<List<Restaurante>> darListaResturantesAnunciante(int id);
-
-    @Insert
-    long ingresarAnunciante(Anunciante anunciante);
-
-    @Update
-    void actualizarAnunciante(Anunciante anunciante);
 
 }

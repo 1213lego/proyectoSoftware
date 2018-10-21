@@ -16,17 +16,9 @@ import java.util.List;
 
 @Dao
 @TypeConverters(TimestampConverter.class)
-public interface CalificacionDao
+public interface CalificacionDao extends IDao<Calificacion>
 {
     @Query("select * from Calificacion")
     LiveData<List<Calificacion>> consultarCalificaciones();
 
-    @Insert
-    long ingresarCalificacion(Calificacion calificacion);
-
-    @Delete
-    void eliminarCalificacion(Calificacion calificacion);
-
-    @Update
-    void actualizarCalificacion(Calificacion calificacion);
 }

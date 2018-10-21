@@ -12,10 +12,10 @@
         android:layout_width="228dp"
         android:layout_height="0dp"
         android:layout_marginTop="44dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="306dp"
         android:text="Hello World!"
         android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnMap"
+        app:layout_constraintBottom_toTopOf="@+id/textCantidad"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,7 +24,7 @@
         android:id="@+id/btnMap"
         android:layout_width="128dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="11dp"
         android:onClick="openMap"
         android:text="Abrir Mapa"
         app:layout_constraintBottom_toTopOf="@+id/btnVistaRes"
@@ -34,21 +34,21 @@
 
     <Button
         android:id="@+id/btnVistaRes"
-        android:layout_width="0dp"
+        android:layout_width="128dp"
         android:layout_height="0dp"
         android:layout_marginBottom="10dp"
         android:onClick="openMap"
         android:text="VIsta Restaurante"
         app:layout_constraintBottom_toTopOf="@+id/btnIniciarSesion"
-        app:layout_constraintEnd_toEndOf="@+id/btnMap"
-        app:layout_constraintStart_toStartOf="@+id/btnMap"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnMap" />
 
     <Button
         android:id="@+id/btnIniciarSesion"
         android:layout_width="134dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="13dp"
+        android:layout_marginBottom="12dp"
         android:onClick="openLogin"
         android:text="Iniciar Sesión"
         app:layout_constraintBottom_toTopOf="@+id/btnRegistrarse"
@@ -60,12 +60,37 @@
         android:id="@+id/btnRegistrarse"
         android:layout_width="124dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="158dp"
+        android:layout_marginBottom="45dp"
         android:onClick="openRegisterForm"
         android:text="Registrarse"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnIniciarSesion" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="93dp"
+        android:text="Cantidad Usuarios"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textCantidad"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnRegistrarse" />
+
+    <TextView
+        android:id="@+id/textCantidad"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="200dp"
+        android:layout_marginBottom="88dp"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textViewInfoRestaurante" />
 
 </android.support.constraint.ConstraintLayout>

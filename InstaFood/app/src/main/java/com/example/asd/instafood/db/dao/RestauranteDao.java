@@ -13,7 +13,7 @@ import com.example.asd.instafood.db.models.Restaurante;
 import java.util.List;
 
 @Dao
-public interface RestauranteDao
+public interface RestauranteDao extends IDao<Restaurante>
 {
     @Query("select * from Restaurante")
     LiveData<List<Restaurante>> consultarRestaurantes();
@@ -23,14 +23,5 @@ public interface RestauranteDao
 
     @Query("select * from Plato where Plato.restaurante = :id ")
     LiveData<List<Plato>>  consultarPlatosRestaurante(int id);
-
-    @Insert
-    long ingresarRestaurante(Restaurante restaurante);
-
-    @Update
-    void  actualizarRestaurante(Restaurante restaurante);
-
-    @Delete
-    void eliminarRestaurante(Restaurante restaurante);
 
 }

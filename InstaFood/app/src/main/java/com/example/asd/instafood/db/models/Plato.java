@@ -8,7 +8,7 @@ import android.support.annotation.NonNull;
         (
                 foreignKeys = @ForeignKey(entity = Restaurante.class, parentColumns = "restauranteId", childColumns = "restaurante")
         )
-public class Plato
+public class Plato implements IDto
 {
     @NonNull
     @PrimaryKey(autoGenerate = true)
