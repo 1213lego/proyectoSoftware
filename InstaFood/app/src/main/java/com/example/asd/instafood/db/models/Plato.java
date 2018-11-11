@@ -1,8 +1,10 @@
 package com.example.asd.instafood.db.models;
+import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 
 @Entity
         (
@@ -24,16 +26,16 @@ public class Plato implements IDto
     @NonNull
     private String descripcion;
 
-    @NonNull
-    private String rutaFotoPlato;
+    @Nullable
+    @ColumnInfo(name = "imageArray",typeAffinity = ColumnInfo.BLOB)
+    private byte [] imageArray;
 
-    public Plato( @NonNull int restaurante, @NonNull String nombrePlato,
-                 @NonNull String descripcion, @NonNull String rutaFotoPlato)
+    public Plato(@NonNull int restaurante, @NonNull String nombrePlato, @NonNull String descripcion, @Nullable byte[] imageArray)
     {
         this.restaurante = restaurante;
         this.nombrePlato = nombrePlato;
         this.descripcion = descripcion;
-        this.rutaFotoPlato = rutaFotoPlato;
+        this.imageArray = imageArray;
     }
 
     @NonNull
@@ -72,12 +74,12 @@ public class Plato implements IDto
         this.descripcion = descripcion;
     }
 
-    @NonNull
-    public String getRutaFotoPlato() {
-        return rutaFotoPlato;
+    @Nullable
+    public byte[] getImageArray() {
+        return imageArray;
     }
 
-    public void setRutaFotoPlato(@NonNull String rutaFotoPlato) {
-        this.rutaFotoPlato = rutaFotoPlato;
+    public void setImageArray(@Nullable byte[] imageArray) {
+        this.imageArray = imageArray;
     }
 }

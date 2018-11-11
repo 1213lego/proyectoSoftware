@@ -3,9 +3,12 @@ import android.arch.persistence.db.SupportSQLiteDatabase;
 import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 
+import com.example.asd.instafood.R;
 import com.example.asd.instafood.db.dao.AnuncianteDao;
 import com.example.asd.instafood.db.dao.CalificacionDao;
 import com.example.asd.instafood.db.dao.OpinionRestauranteDao;
@@ -25,6 +28,8 @@ import com.example.asd.instafood.db.models.RestauranteFavorito;
 import com.example.asd.instafood.db.models.TipoComida;
 import com.example.asd.instafood.db.models.TipoUsuario;
 import com.example.asd.instafood.db.models.Usuario;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 
 import java.util.Date;
 
@@ -108,27 +113,27 @@ public abstract class DatabaseInstafood extends RoomDatabase
         {
             //Ingreso 3 getUsuarioDao normales
             Usuario usuario1=new Usuario("usuario1@usuario1.com", "nombre1", "apellido1",
-                    "usuario1", Estados.ESTADO_ACTIVO, TipoUsuario.USUARIO_NORMAL,"foto1");
+                    "usuario1", Estados.ESTADO_ACTIVO, TipoUsuario.USUARIO_NORMAL,new byte[]{2,5,5});
             long user= usuarioDao.ingresar(usuario1);
 
             Usuario usuario2=new Usuario("usuario2@usuario2.com", "nombre2", "apellido2",
-                    "usuario2", Estados.ESTADO_ACTIVO, TipoUsuario.USUARIO_NORMAL,"foto");
+                    "usuario2", Estados.ESTADO_ACTIVO, TipoUsuario.USUARIO_NORMAL,new byte[]{2,5,5});
             usuarioDao.ingresar(usuario2);
 
             Usuario usuario3=new Usuario("usuario3@usuario3.com", "nombre3", "apellido3",
-                    "usuario3", Estados.ESTADO_ACTIVO, TipoUsuario.USUARIO_NORMAL,"foto3");
+                    "usuario3", Estados.ESTADO_ACTIVO, TipoUsuario.USUARIO_NORMAL,new byte[]{2,5,5});
             usuarioDao.ingresar(usuario3);
 
             // ingreso dos getAnuncianteDao
             Usuario usuario4=new Usuario("anunciante1@anunciante1.com", "anunciante1", "anunciante1",
-                    "anunciante1", Estados.ESTADO_ACTIVO, TipoUsuario.USUARIO_ANUNCIANTE,"anunciante1");
+                    "anunciante1", Estados.ESTADO_ACTIVO, TipoUsuario.USUARIO_ANUNCIANTE,new byte[]{2,5,5});
             usuarioDao.ingresar(usuario4);
 
             Anunciante anunciante1= new Anunciante(usuario4.getEmail(),20000,new Date());
             int idAnunciante1= (int)anuncianteDao.ingresar(anunciante1);
 
             Usuario usuario5=new Usuario("usuario5@usuario5.com", "usuario5", "usuario5",
-                    "usuario5", Estados.ESTADO_ACTIVO, TipoUsuario.USUARIO_ANUNCIANTE,"usuario5");
+                    "usuario5", Estados.ESTADO_ACTIVO, TipoUsuario.USUARIO_ANUNCIANTE,new byte[]{2,5,5});
             usuarioDao.ingresar(usuario5);
 
             Anunciante anunciante2= new Anunciante(usuario5.getEmail(),20000,new Date());
@@ -151,36 +156,37 @@ public abstract class DatabaseInstafood extends RoomDatabase
             //Ingreso dos getRestauranteDao
             Restaurante restaurante1= new Restaurante(idAnunciante1,id1,"Comidas Rapidas La Quinta",
                     "3111654","Hamburguesas, perros y mas", 4.427367,-75.205258,
-                    "dsfdsfdvdsvsd","foto");
+                    "dsfdsfdvdsvsd",new byte[]{2,5,5});
+
             int restauranteId1= (int)restauranteDao.ingresar(restaurante1);
 
             Restaurante restaurante2= new Restaurante(idAnunciante2,id4,"Empanadas Toro Rojo",
                     "1775187157","Empanadas y mas", 4.449076 ,-75.200242,
-                    "fefefdsfdsfdsf","eeeeeee");
+                    "fefefdsfdsfdsf",new byte[]{2,5,5});
             int restauranteId2= (int) restauranteDao.ingresar(restaurante2);
 
             Restaurante restaurante3= new Restaurante(idAnunciante2,id4,"Carnaval del pollo",
                     "1775187157","Pollos y conejo", 4.425716 ,-75.190868,
-                    "av mirolindo","pollo");
+                    "av mirolindo",new byte[]{2,5,5});
             int restauranteId3= (int) restauranteDao.ingresar(restaurante3);
 
 
 
 
             //ingreso 3 getPlatoDao al restaurante1
-            Plato plato= new Plato(restauranteId1,"Hamburguesa","dsdsdsd","foto");
+            Plato plato= new Plato(restauranteId1,"Hamburguesa","dsdsdsd",new byte[]{2,5,5});
             platoDao.ingresar(plato);
-            Plato plato1= new Plato(restauranteId1,"Perro","dsdsdsd","foto");
+            Plato plato1= new Plato(restauranteId1,"Perro","dsdsdsd",new byte[]{2,5,5});
             platoDao.ingresar(plato1);
-            Plato plato2= new Plato(restauranteId1,"Patacon","dsdsdsd","foto");
+            Plato plato2= new Plato(restauranteId1,"Patacon","dsdsdsd",new byte[]{2,5,5});
             platoDao.ingresar(plato2);
 
             //ingreso 3 getPlatoDao al restaurante2
-            Plato plato3= new Plato(restauranteId2,"Empanada criolla","dsdsdsd","foto");
+            Plato plato3= new Plato(restauranteId2,"Empanada criolla","dsdsdsd",new byte[]{2,5,5});
             platoDao.ingresar(plato3);
-            Plato plato4= new Plato(restauranteId2,"Empanada Ropa vieja","dsdsdsd","foto");
+            Plato plato4= new Plato(restauranteId2,"Empanada Ropa vieja","dsdsdsd",new byte[]{2,5,5});
             platoDao.ingresar(plato4);
-            Plato plato5= new Plato(restauranteId2,"Empanda tradicional","dsdsdsd","foto");
+            Plato plato5= new Plato(restauranteId2,"Empanda tradicional","dsdsdsd",new byte[]{2,5,5});
             platoDao.ingresar(plato5);
 
             //ingreso opiniones al restaurate1

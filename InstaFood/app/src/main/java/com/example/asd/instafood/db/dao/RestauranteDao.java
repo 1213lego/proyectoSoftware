@@ -24,4 +24,7 @@ public interface RestauranteDao extends IDao<Restaurante>
     @Query("select * from Plato where Plato.restaurante = :id ")
     LiveData<List<Plato>>  consultarPlatosRestaurante(int id);
 
+    @Query("select * from Restaurante where acos(:latOrigen)+cos(:lonOrigen)<:radio")
+    LiveData<Restaurante> consultarRestaurantesCercano(double latOrigen, double lonOrigen, double radio);
+
 }

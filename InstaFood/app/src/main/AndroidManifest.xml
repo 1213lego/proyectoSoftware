@@ -46,23 +46,23 @@
 
         <activity
             android:name=".UI.RestaurantesMapsActivity"
-            android:label="@string/title_activity_restaurantes_maps"></activity>
+            android:label="@string/title_activity_restaurantes_maps" />
         <activity
             android:name=".UI.LoginActivity"
             android:label="@string/title_activity_login"
-            android:parentActivityName=".UI.MainActivity"></activity>
+            android:parentActivityName=".UI.MainActivity" />
         <activity
             android:name=".UI.AnuncianteActivity"
-            android:label="Anunciante"></activity>
+            android:label="Anunciante" />
         <activity
             android:name=".UI.UsuarioActivity"
-            android:label="Usuario"></activity>
+            android:label="Usuario" />
         <activity
             android:name=".UI.RegistroUsuarioActivity"
-            android:label="Resgistrate"></activity>
+            android:label="Resgistrate" />
         <activity
             android:name=".UI.RegistroRestauranteActivity"
-            android:label="Registra tu Resturante"></activity>
+            android:label="Registra tu Resturante" />
     </application>
 
 </manifest>

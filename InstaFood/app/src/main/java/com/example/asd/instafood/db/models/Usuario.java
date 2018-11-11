@@ -28,17 +28,18 @@ public class Usuario implements  IDto{
     private char tipoUsuario;
 
     @Nullable
-    private String rutaFoto;
+    @ColumnInfo(name = "imageArray",typeAffinity = ColumnInfo.BLOB)
+    private byte [] imageArray;
 
     public Usuario(@NonNull String email, @NonNull String nombre, @NonNull String apellido,
-                   String contrasenia, @NonNull char estado, @NonNull char tipoUsuario, @Nullable String rutaFoto) {
+                   String contrasenia, @NonNull char estado, @NonNull char tipoUsuario, @Nullable byte [] imageArray) {
         this.email = email;
         this.nombre = nombre;
         this.apellido = apellido;
         this.contrasenia = contrasenia;
         this.estado = estado;
         this.tipoUsuario = tipoUsuario;
-        this.rutaFoto = rutaFoto;
+        this.imageArray = imageArray;
     }
 
     @NonNull
@@ -95,12 +96,12 @@ public class Usuario implements  IDto{
     }
 
     @Nullable
-    public String getRutaFoto() {
-        return rutaFoto;
+    public byte[] getImageArray() {
+        return imageArray;
     }
 
-    public void setRutaFoto(@Nullable String rutaFoto) {
-        this.rutaFoto = rutaFoto;
+    public void setImageArray(@Nullable byte[] imageArray) {
+        this.imageArray = imageArray;
     }
 
     @Override

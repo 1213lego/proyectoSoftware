@@ -3,6 +3,8 @@ package com.example.asd.instafood.UI;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -118,6 +120,12 @@ public class UsuarioActivity extends AppCompatActivity
             {
                 // lanzar unn intent con la vista de un restaurante mas detallada, en esta vista deben estan los platos del restaurante
                 Toast.makeText(UsuarioActivity.this, "Lanzar vista del restaurante con los platos", Toast.LENGTH_SHORT).show();
+                byte [] aaa= restaurante.getImageArray();
+                if (aaa != null) {
+                    Toast.makeText(UsuarioActivity.this, " " + aaa.length, Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(UsuarioActivity.this, "no hay imagne", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

@@ -1,9 +1,13 @@
 package com.example.asd.instafood.UI;
 
+import android.Manifest;
 import android.arch.lifecycle.Observer;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,7 +18,6 @@ import com.example.asd.instafood.R;
 import com.example.asd.instafood.Repositories.Repository;
 public class MainActivity extends AppCompatActivity
 {
-
     private Button btnMap, btnvistaRestaurante,btnRegistrarse, btnIniciarSesion;
     private TextView textView;
     @Override
@@ -35,10 +38,11 @@ public class MainActivity extends AppCompatActivity
         {
            Intent intent=new Intent(this,RestaurantesMapsActivity.class);
            startActivity(intent);
+
         }
         else if(view.getId()==R.id.btnVistaRes)
         {
-            Intent intent=new Intent(this,RegistroRestauranteActivity.class);
+            Intent intent=new Intent(this,UsuarioActivity.class);
             intent.putExtra("Email","usuario1@usuario1.com");
             startActivity(intent);
         }
