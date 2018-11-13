@@ -30,7 +30,8 @@
         app:layout_constraintBottom_toTopOf="@+id/btnVistaRes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewInfoRestaurante" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewInfoRestaurante"
+        app:layout_constraintVertical_chainStyle="spread_inside" />
 
     <Button
         android:id="@+id/btnVistaRes"
@@ -41,6 +42,7 @@
         android:text="VIsta Restaurante"
         app:layout_constraintBottom_toTopOf="@+id/btnIniciarSesion"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnMap" />
 
