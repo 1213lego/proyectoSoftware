@@ -64,6 +64,7 @@
             android:name=".UI.RegistroRestauranteActivity"
             android:label="Registra tu Resturante" />
         <activity android:name=".UI.RestauranteActivity" />
+        <activity android:name=".UI.registroPlatoActivity"></activity>
     </application>
 
 </manifest>

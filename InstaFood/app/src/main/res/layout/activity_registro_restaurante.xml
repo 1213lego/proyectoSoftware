@@ -8,7 +8,7 @@
     tools:layout_editor_absoluteY="81dp">
 
     <LinearLayout
-        android:id="@+id/layoutTelContacto"
+        android:id="@+id/layoutPassword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -17,7 +17,7 @@
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayoutNombre">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutApellido">
 
         <TextView
             android:id="@+id/labTelefonoContacto"
@@ -27,7 +27,7 @@
             android:layout_marginTop="8dp"
             android:text="Teléfono de contacto del restaurante: "
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/linearLayoutNombre" />
+            app:layout_constraintTop_toTopOf="@+id/linearLayoutApellido" />
 
         <EditText
             android:id="@+id/txtTelContacto"
@@ -36,8 +36,9 @@
             android:layout_marginStart="16dp"
             android:ems="10"
             android:inputType="textPersonName"
-            app:layout_constraintStart_toStartOf="@+id/linearLayoutNombre"
-            app:layout_constraintTop_toBottomOf="@+id/labNombre" />
+            app:layout_constraintStart_toStartOf="@+id/linearLayoutApellido"
+            app:layout_constraintTop_toBottomOf="@+id/labApellido" />
+
     </LinearLayout>
 
     <FrameLayout
@@ -87,26 +88,22 @@
     </FrameLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayoutNombre"
-        android:layout_width="0dp"
+        android:id="@+id/linearLayoutApellido"
+        android:layout_width="368dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
         android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameImagen">
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="184dp">
 
         <TextView
-            android:id="@+id/labNombre"
+            android:id="@+id/labApellido"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="8dp"
             android:text="Especifica el nombre del restaurante: "
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/linearLayoutNombre" />
+            app:layout_constraintTop_toTopOf="@+id/linearLayoutApellido" />
 
         <EditText
             android:id="@+id/txtNombre"
@@ -115,8 +112,8 @@
             android:layout_marginStart="16dp"
             android:ems="10"
             android:inputType="textPersonName"
-            app:layout_constraintStart_toStartOf="@+id/linearLayoutNombre"
-            app:layout_constraintTop_toBottomOf="@+id/labNombre" />
+            app:layout_constraintStart_toStartOf="@+id/linearLayoutApellido"
+            app:layout_constraintTop_toBottomOf="@+id/labApellido" />
     </LinearLayout>
 
     <LinearLayout
@@ -129,7 +126,7 @@
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner6">
+        app:layout_constraintTop_toBottomOf="@+id/listaRestaurantes">
 
         <TextView
             android:id="@+id/labDescripcion"
@@ -147,17 +144,17 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/textView18"
+        android:id="@+id/labTipoComida"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginTop="20dp"
         android:text="Tipo de comida: "
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layoutTelContacto" />
+        app:layout_constraintTop_toBottomOf="@+id/layoutPassword" />
 
     <Spinner
-        android:id="@+id/spinner6"
+        android:id="@+id/listaRestaurantes"
         android:layout_width="200dp"
         android:layout_height="25dp"
         android:layout_marginStart="8dp"
@@ -165,10 +162,11 @@
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/textView18"
-        app:layout_constraintTop_toBottomOf="@+id/layoutTelContacto" />
+        app:layout_constraintStart_toEndOf="@+id/labTipoComida"
+        app:layout_constraintTop_toBottomOf="@+id/layoutPassword" />
 
     <FrameLayout
+        android:id="@+id/frameLayout"
         android:layout_width="114dp"
         android:layout_height="38dp"
         android:layout_marginEnd="8dp"
@@ -184,20 +182,32 @@
             android:textSize="12sp" />
     </FrameLayout>
 
-    <LinearLayout
-        android:layout_width="217dp"
-        android:layout_height="58dp"
-        android:orientation="horizontal"
-        tools:layout_editor_absoluteX="84dp"
-        tools:layout_editor_absoluteY="424dp">
+    <TextView
+        android:id="@+id/labUbicarRestaurante"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Ubica tu restaurante"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutDescripcion" />
 
-        <TextView
-            android:id="@+id/labUbicarRestaurante"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Ubica tu restaurante"
-            android:textAlignment="center" />
-
-    </LinearLayout>
+    <ImageButton
+        android:id="@+id/btnUbicarRestaurante"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="8dp"
+        android:src="@android:drawable/ic_menu_mylocation"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/frameLayout"
+        app:layout_constraintHorizontal_bias="0.987"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labUbicarRestaurante"
+        app:layout_constraintVertical_bias="1.0" />
 
 </android.support.constraint.ConstraintLayout>

@@ -7,132 +7,212 @@
     tools:context=".RegistroUsuarioActivity"
     tools:layout_editor_absoluteY="81dp">
 
+    <LinearLayout
+        android:id="@+id/linearLayoutApellido"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutNombre">
+
+        <TextView
+            android:id="@+id/labApellido"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:text="Ingresa tu apellido:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/linearLayoutApellido" />
+
+        <EditText
+            android:id="@+id/txtApellido"
+            android:layout_width="320dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="16dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toStartOf="@+id/linearLayoutApellido"
+            app:layout_constraintTop_toBottomOf="@+id/labApellido" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutEmail">
+
+        <TextView
+            android:id="@+id/labPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:text="Ingresa tu contraseña:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/linearLayoutApellido" />
+
+        <EditText
+            android:id="@+id/txtPassword"
+            android:layout_width="318dp"
+            android:layout_height="37dp"
+            android:layout_marginStart="16dp"
+            android:ems="10"
+            android:inputType="textPassword"
+            app:layout_constraintStart_toStartOf="@+id/linearLayoutApellido"
+            app:layout_constraintTop_toBottomOf="@+id/labApellido" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutNombre"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameImagen">
+
+        <TextView
+            android:id="@+id/labNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:text="Ingresa tu nombre:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/linearLayoutApellido" />
+
+        <EditText
+            android:id="@+id/txtNombre"
+            android:layout_width="320dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="16dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toStartOf="@+id/linearLayoutApellido"
+            app:layout_constraintTop_toBottomOf="@+id/labApellido" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutApellido">
+
+        <TextView
+            android:id="@+id/labEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:text="Ingresa tu email:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/linearLayoutApellido" />
+
+        <EditText
+            android:id="@+id/txtEmail"
+            android:layout_width="318dp"
+            android:layout_height="37dp"
+            android:layout_marginStart="16dp"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            app:layout_constraintStart_toStartOf="@+id/linearLayoutApellido"
+            app:layout_constraintTop_toBottomOf="@+id/labApellido" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/frameTitulo"
+        android:layout_width="368dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/labTitulo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/border"
+            android:gravity="center"
+
+            android:text="REGISTRO"
+            android:textAlignment="center" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/frameImagen"
+        android:layout_width="193dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameTitulo">
+
+        <ImageView
+            android:id="@+id/imgRestaurante"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/default_user" />
+
+        <Button
+            android:id="@+id/btnExaminar"
+            android:layout_width="35dp"
+            android:layout_height="38dp"
+            android:text="+" />
+    </FrameLayout>
+
     <RadioButton
         android:id="@+id/rbAnunciante"
-        android:layout_width="wrap_content"
+        android:layout_width="127dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="74dp"
-        android:layout_marginEnd="21dp"
-        android:layout_marginBottom="33dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
         android:text="Soy anunciante"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnRegistar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/layoutPassword" />
 
     <Button
         android:id="@+id/btnRegistar"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="34dp"
-        android:layout_marginBottom="33dp"
+        android:layout_width="129dp"
+        android:layout_height="46dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="8dp"
         android:onClick="createUser"
-        android:text="Registar"
+        android:text="Listo!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/rbAnunciante"
-        app:layout_constraintTop_toBottomOf="@+id/btnExaminar" />
-
-    <TextView
-        android:id="@+id/txtRegistro"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginBottom="32dp"
-        android:text="Registro"
-        android:textSize="40sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtCorreo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/txtCorreo"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginBottom="34dp"
-        android:ems="10"
-        android:hint="Ingresa tu Email"
-        android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toTopOf="@+id/txtContraseña"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtRegistro" />
-
-    <EditText
-        android:id="@+id/txtContraseña"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="35dp"
-        android:ems="10"
-        android:hint="Ingresa una contraseña"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/editText6"
-        app:layout_constraintEnd_toEndOf="@+id/txtCorreo"
-        app:layout_constraintTop_toBottomOf="@+id/txtCorreo" />
-
-    <EditText
-        android:id="@+id/editText6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="22dp"
-        android:ems="10"
-        android:hint="Nombre"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/editText7"
-        app:layout_constraintStart_toStartOf="@+id/editText7"
-        app:layout_constraintTop_toBottomOf="@+id/txtContraseña" />
-
-    <EditText
-        android:id="@+id/editText7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        android:ems="10"
-        android:hint="Apellido"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
-        app:layout_constraintEnd_toEndOf="@+id/textView2"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/editText6" />
-
-    <Button
-        android:id="@+id/btnExaminar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="384dp"
-        android:text="Examinar"
-        app:layout_constraintBottom_toTopOf="@+id/btnRegistar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginBottom="35dp"
-        android:text="Adjuntar Imagen"
-        app:layout_constraintBottom_toTopOf="@+id/rbAnunciante"
-        app:layout_constraintEnd_toStartOf="@+id/btnExaminar"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText7" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="0dp"
-        android:layout_height="441dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="44dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/txtRegistro">
-
-    </LinearLayout>
+        app:layout_constraintTop_toBottomOf="@+id/layoutPassword" />
 
 </android.support.constraint.ConstraintLayout>
