@@ -19,28 +19,26 @@ import com.example.asd.instafood.Repositories.Repository;
 public class MainActivity extends AppCompatActivity
 {
     private Button btnMap, btnvistaRestaurante,btnRegistrarse, btnIniciarSesion;
-    private TextView textView;
-    @Override
+   @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        btnMap=(Button) findViewById(R.id.btnMap);
+        btnMap=(Button) findViewById(R.id.btnVistaRestaurante);
         btnIniciarSesion = (Button)findViewById(R.id.btnIniciarSesion);
         btnRegistrarse = (Button)findViewById(R.id.btnRegistrarse);
-        textView=findViewById(R.id.textCantidad);
         Repository repository= new Repository(getApplication());
 
     }
     public void openMap(View view)
     {
-        if(view.getId()==R.id.btnMap)
+        if(view.getId()==R.id.btnVistaRestaurante)
         {
            Intent intent=new Intent(this,RestaurantesMapsActivity.class);
            startActivity(intent);
 
         }
-        else if(view.getId()==R.id.btnVistaRes)
+        else if(view.getId()==R.id.btnVistaRestaurante)
         {
             Intent intent=new Intent(this,UsuarioActivity.class);
             intent.putExtra("Email","usuario1@usuario1.com");

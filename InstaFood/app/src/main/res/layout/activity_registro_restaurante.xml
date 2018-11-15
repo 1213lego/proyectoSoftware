@@ -8,7 +8,7 @@
     tools:layout_editor_absoluteY="81dp">
 
     <LinearLayout
-        android:id="@+id/layoutPassword"
+        android:id="@+id/layoutTelefono"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -37,7 +37,7 @@
             android:ems="10"
             android:inputType="textPersonName"
             app:layout_constraintStart_toStartOf="@+id/linearLayoutApellido"
-            app:layout_constraintTop_toBottomOf="@+id/labApellido" />
+            app:layout_constraintTop_toBottomOf="@+id/labNombre" />
 
     </LinearLayout>
 
@@ -91,12 +91,16 @@
         android:id="@+id/linearLayoutApellido"
         android:layout_width="368dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="184dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameImagen">
 
         <TextView
-            android:id="@+id/labApellido"
+            android:id="@+id/labNombre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -113,7 +117,7 @@
             android:ems="10"
             android:inputType="textPersonName"
             app:layout_constraintStart_toStartOf="@+id/linearLayoutApellido"
-            app:layout_constraintTop_toBottomOf="@+id/labApellido" />
+            app:layout_constraintTop_toBottomOf="@+id/labNombre" />
     </LinearLayout>
 
     <LinearLayout
@@ -151,7 +155,7 @@
         android:layout_marginTop="20dp"
         android:text="Tipo de comida: "
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layoutPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/layoutTelefono" />
 
     <Spinner
         android:id="@+id/listaRestaurantes"
@@ -163,7 +167,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/labTipoComida"
-        app:layout_constraintTop_toBottomOf="@+id/layoutPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/layoutTelefono" />
 
     <FrameLayout
         android:id="@+id/frameLayout"

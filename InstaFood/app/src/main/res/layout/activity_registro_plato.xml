@@ -6,4 +6,139 @@
     android:layout_height="match_parent"
     tools:context=".UI.registroPlatoActivity">
 
+    <LinearLayout
+        android:id="@+id/linearLayoutApellido"
+        android:layout_width="368dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameImagen">
+
+        <TextView
+            android:id="@+id/labNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:text="Especifica el nombre del plato"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/linearLayoutApellido" />
+
+        <EditText
+            android:id="@+id/txtNombrePlato"
+            android:layout_width="320dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="16dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toStartOf="@+id/linearLayoutApellido"
+            app:layout_constraintTop_toBottomOf="@+id/labNombre" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/frameTitulo"
+        android:layout_width="368dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/labTitulo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/border"
+            android:gravity="center"
+
+            android:text="AGREGA UN PLATO"
+            android:textAlignment="center" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/frameImagen"
+        android:layout_width="193dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameTitulo">
+
+        <ImageView
+            android:id="@+id/imgRestaurante"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/pollo" />
+
+        <Button
+            android:id="@+id/btnExaminar"
+            android:layout_width="35dp"
+            android:layout_height="38dp"
+            android:text="+" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutDescripcion"
+        android:layout_width="326dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutApellido">
+
+        <TextView
+            android:id="@+id/labDescripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Descripcion:" />
+
+        <EditText
+            android:id="@+id/txtDescripcionPlato"
+            android:layout_width="315dp"
+            android:layout_height="31dp"
+            android:ems="10"
+            android:inputType="textMultiLine" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnFinalizar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:text="Finalizar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnAgregarPlato"
+        app:layout_constraintHorizontal_bias="0.656"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutDescripcion"
+        app:layout_constraintVertical_bias="0.4" />
+
+    <Button
+        android:id="@+id/btnAgregarPlato"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="16dp"
+        android:text="Agregar otro plato"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutDescripcion"
+        app:layout_constraintVertical_bias="0.4" />
 </android.support.constraint.ConstraintLayout>

@@ -33,7 +33,7 @@ public class RegistroRestauranteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_registro_restaurante);
         comidas = new ArrayList();
         registroRestauranteViewModel=ViewModelProviders.of(this).get(RegistroRestauranteViewModel.class);
-        spinner = (Spinner) findViewById(R.id.spinnerTipoComida);
+        spinner = (Spinner) findViewById(R.id.listaRestaurantes);
         comidas.add("Seleccione");
         registroRestauranteViewModel.darLiveDataTiposComida().observe(this, new Observer<List<TipoComida>>()
         {
