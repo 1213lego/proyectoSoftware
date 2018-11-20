@@ -169,7 +169,7 @@ public class UsuarioActivity extends AppCompatActivity
     {
         if(view.getId()==R.id.btnBuscarRestaurantes)
         {
-            Intent intent= new Intent(this,RestaurantesMapsActivity.class);
+            Intent intent= new Intent(this,MapsActivity.class);
             startActivity(intent);
         }
     }

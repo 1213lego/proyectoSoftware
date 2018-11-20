@@ -45,9 +45,6 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".UI.RestaurantesMapsActivity"
-            android:label="@string/title_activity_restaurantes_maps" />
-        <activity
             android:name=".UI.LoginActivity"
             android:label="@string/title_activity_login"
             android:parentActivityName=".UI.MainActivity" />
@@ -64,7 +61,10 @@
             android:name=".UI.RegistroRestauranteActivity"
             android:label="Registra tu Resturante" />
         <activity android:name=".UI.RestauranteActivity" />
-        <activity android:name=".UI.RegistroPlatoActivity"></activity>
+        <activity android:name=".UI.RegistroPlatoActivity" />
+        <activity
+            android:name=".UI.MapsActivity"
+            android:label="@string/title_activity_maps"></activity>
     </application>
 
 </manifest>

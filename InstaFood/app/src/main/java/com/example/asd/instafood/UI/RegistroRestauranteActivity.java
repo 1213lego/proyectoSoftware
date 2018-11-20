@@ -69,7 +69,7 @@ public class RegistroRestauranteActivity extends AppCompatActivity {
     public void openMap(View view) {
         if (view.getId() == R.id.btnUbicarRestaurante)
         {
-            Intent intent = new Intent(this, RestaurantesMapsActivity.class);
+            Intent intent = new Intent(this, MapsActivity.class);
             startActivity(intent);
             //TODO: ABRIR LA VISTA DE RESTAURANTE QUE PERMITA AL USUARIO UBICAR UN PUNTERO EN EL MAPA Y RECOGER SU DIRECCION.
         }

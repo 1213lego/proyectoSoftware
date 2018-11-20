@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity
     {
         if(view.getId()==R.id.btnVistaRestaurante)
         {
-           Intent intent=new Intent(this,RestaurantesMapsActivity.class);
+           Intent intent=new Intent(this,MapsActivity.class);
            startActivity(intent);
 
         }
