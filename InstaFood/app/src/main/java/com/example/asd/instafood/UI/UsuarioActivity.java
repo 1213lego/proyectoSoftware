@@ -70,12 +70,28 @@ public class UsuarioActivity extends AppCompatActivity
             }
         });
 
+        //TODO ACCEDER A LA BASE DE DATOS
+
+        //ACCEDO A LA TABLA Y GUARDO LA INFORMACION
+
+
+
+
+
+
+
         //Para el recyclerview
         recyclerView=findViewById(R.id.recyclerViewResFavoritos);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
         cargarUsuario();
         cargarRestaurantesFavoritosRecyclerview();
+
+
+
+
+
+
 
     }
 

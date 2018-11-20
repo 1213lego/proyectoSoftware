@@ -58,6 +58,9 @@ public class RegistroRestauranteActivity extends AppCompatActivity {
     {
         if(view.getId()==R.id.btnExaminar)
         {
+
+
+
            //todo abrir galeria
 
         }
