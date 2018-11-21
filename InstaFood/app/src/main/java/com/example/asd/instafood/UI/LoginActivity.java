@@ -274,14 +274,13 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     {
         if(mEmailView.getText().toString()!=null && mPasswordView.getText().toString()!=null)
         {
-            Usuario prueba=viewModel.darUsuario(mEmailView.getText().toString()).getValue();
             viewModel.darUsuario(mEmailView.getText().toString()).observe(this, new Observer<Usuario>() {
                 @Override
                 public void onChanged(@Nullable Usuario usuario) {
                     if(usuario!=null)
                     {
                         if(usuario.getContrasenia().equals(mPasswordView.getText().toString()) &&
-                                usuario.getApellido().equals(mEmailView.getText().toString()))
+                                usuario.getEmail().equals(mEmailView.getText().toString()))
                         {
                             if(usuario.getTipoUsuario()==TipoUsuario.USUARIO_NORMAL)
                             {
@@ -292,7 +291,16 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                                 lanzarAnunciante(usuario.getEmail());
                             }
                         }
+                        else
+                        {
+                            Toast.makeText(LoginActivity.this, "Email o contraseña incorrectos", Toast.LENGTH_SHORT).show();
+                        }
                     }
+                    else
+                    {
+                        Toast.makeText(LoginActivity.this, "No se ha registrado", Toast.LENGTH_SHORT).show();
+                    }
+                    viewModel.darUsuario(mEmailView.getText().toString()).removeObservers(LoginActivity.this);
                 }
             });
         }
@@ -336,6 +344,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                         {
                             lanzarAnunciante(usuario.getEmail());
                         }
+                        viewModel.darUsuario(email).removeObservers(LoginActivity.this);
                     }
                     else
                     {
