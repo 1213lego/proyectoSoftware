@@ -172,6 +172,11 @@ public class Repository
     {
         return anuncianteDao.consultarAnuncianteEmail(email);
     }
+    public LiveData<List<Restaurante>> darRestaurantesAnunciante(int id)
+    {
+        return anuncianteDao.darListaResturantesAnunciante(id);
+    }
+
     protected AnuncianteDao getAnuncianteDao() {
         return anuncianteDao;
     }

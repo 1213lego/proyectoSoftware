@@ -328,8 +328,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         if(result.isSuccess())
         {
             GoogleSignInAccount account = result.getSignInAccount();
-            final String name = account.getDisplayName();
+            final String name = account.getGivenName();
             final String email = account.getEmail();
+            final String apellido= account.getFamilyName();
             viewModel.darUsuario(email).observe(this, new Observer<Usuario>() {
                 @Override
                 public void onChanged(@Nullable Usuario usuario)
@@ -348,7 +349,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                     }
                     else
                     {
-                        crearUsuario(email, name);
+                        crearUsuario(email, name,apellido);
                     }
                 }
             });
@@ -366,9 +367,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         intent.putExtra("Email",correo);
         startActivity(intent);
     }
-    public void  crearUsuario(String email,String nombre)
+    public void  crearUsuario(String email,String nombre, String apellido)
     {
-        viewModel.ingresar(new Usuario(email,nombre,nombre,"",Estados.ESTADO_ACTIVO,TipoUsuario.USUARIO_NORMAL,null));
+        viewModel.ingresar(new Usuario(email,nombre,apellido,"",Estados.ESTADO_ACTIVO,TipoUsuario.USUARIO_NORMAL,null));
 
     }
     private void addEmailsToAutoComplete(List<String> emailAddressCollection) {
