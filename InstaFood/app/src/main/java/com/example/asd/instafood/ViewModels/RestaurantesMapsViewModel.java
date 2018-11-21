@@ -21,6 +21,10 @@ public class RestaurantesMapsViewModel extends SuperAndroidViewModel
     {
         return repository.darLiveDataRestaurantes();
     }
+    public LiveData<List<Restaurante>> darRestaurantesCercanos(double latOrigen, double lonOrigen, double radio)
+    {
+        return repository.consultarRestaurantesCercanos(latOrigen,  lonOrigen,  radio);
+    }
 
 
 }

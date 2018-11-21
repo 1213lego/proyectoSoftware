@@ -176,7 +176,10 @@ public class Repository
     {
         return anuncianteDao.darListaResturantesAnunciante(id);
     }
-
+    public LiveData<List<Restaurante>> consultarRestaurantesCercanos(double latOrigen, double lonOrigen, double radio)
+    {
+        return restauranteDao.consultarRestaurantesCercano(latOrigen,lonOrigen,radio);
+    }
     protected AnuncianteDao getAnuncianteDao() {
         return anuncianteDao;
     }

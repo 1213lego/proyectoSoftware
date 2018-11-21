@@ -32,13 +32,13 @@ public class MainActivity extends AppCompatActivity
     }
     public void openMap(View view)
     {
-       /* if(view.getId()==R.id.btnVistaRestaurante)
+        if(view.getId()==R.id.btnVistaRestaurante)
         {
            Intent intent=new Intent(this,MapsActivity.class);
            startActivity(intent);
 
-        }*/
-        if(view.getId()==R.id.btnVistaRestaurante)
+        }
+        else if(view.getId()==R.id.btnVistaRestaurante)
         {
             Intent intent=new Intent(this,UsuarioActivity.class);
             intent.putExtra("Email","usuario1@usuario1.com");

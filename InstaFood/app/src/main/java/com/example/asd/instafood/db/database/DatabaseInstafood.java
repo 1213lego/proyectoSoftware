@@ -113,27 +113,27 @@ public abstract class DatabaseInstafood extends RoomDatabase
         {
             //Ingreso 3 getUsuarioDao normales
             Usuario usuario1=new Usuario("usuario1@usuario1.com", "nombre1", "apellido1",
-                    "usuario1", Estados.ESTADO_ACTIVO, TipoUsuario.USUARIO_NORMAL,new byte[]{2,5,5});
+                    "usuario1", Estados.ESTADO_ACTIVO, TipoUsuario.USUARIO_NORMAL,null);
             long user= usuarioDao.ingresar(usuario1);
 
             Usuario usuario2=new Usuario("usuario2@usuario2.com", "nombre2", "apellido2",
-                    "usuario2", Estados.ESTADO_ACTIVO, TipoUsuario.USUARIO_NORMAL,new byte[]{2,5,5});
+                    "usuario2", Estados.ESTADO_ACTIVO, TipoUsuario.USUARIO_NORMAL,null);
             usuarioDao.ingresar(usuario2);
 
             Usuario usuario3=new Usuario("usuario3@usuario3.com", "nombre3", "apellido3",
-                    "usuario3", Estados.ESTADO_ACTIVO, TipoUsuario.USUARIO_NORMAL,new byte[]{2,5,5});
+                    "usuario3", Estados.ESTADO_ACTIVO, TipoUsuario.USUARIO_NORMAL,null);
             usuarioDao.ingresar(usuario3);
 
             // ingreso dos getAnuncianteDao
             Usuario usuario4=new Usuario("anunciante1@anunciante1.com", "anunciante1", "anunciante1",
-                    "anunciante1", Estados.ESTADO_ACTIVO, TipoUsuario.USUARIO_ANUNCIANTE,new byte[]{2,5,5});
+                    "anunciante1", Estados.ESTADO_ACTIVO, TipoUsuario.USUARIO_ANUNCIANTE,null);
             usuarioDao.ingresar(usuario4);
 
             Anunciante anunciante1= new Anunciante(usuario4.getEmail(),20000,new Date());
             int idAnunciante1= (int)anuncianteDao.ingresar(anunciante1);
 
             Usuario usuario5=new Usuario("usuario5@usuario5.com", "usuario5", "usuario5",
-                    "usuario5", Estados.ESTADO_ACTIVO, TipoUsuario.USUARIO_ANUNCIANTE,new byte[]{2,5,5});
+                    "usuario5", Estados.ESTADO_ACTIVO, TipoUsuario.USUARIO_ANUNCIANTE,null);
             usuarioDao.ingresar(usuario5);
 
             Anunciante anunciante2= new Anunciante(usuario5.getEmail(),20000,new Date());
@@ -174,19 +174,19 @@ public abstract class DatabaseInstafood extends RoomDatabase
 
 
             //ingreso 3 getPlatoDao al restaurante1
-            Plato plato= new Plato(restauranteId1,"Hamburguesa","dsdsdsd",new byte[]{2,5,5});
+            Plato plato= new Plato(restauranteId1,"Hamburguesa","dsdsdsd",null);
             platoDao.ingresar(plato);
-            Plato plato1= new Plato(restauranteId1,"Perro","dsdsdsd",new byte[]{2,5,5});
+            Plato plato1= new Plato(restauranteId1,"Perro","dsdsdsd",null);
             platoDao.ingresar(plato1);
-            Plato plato2= new Plato(restauranteId1,"Patacon","dsdsdsd",new byte[]{2,5,5});
+            Plato plato2= new Plato(restauranteId1,"Patacon","dsdsdsd",null);
             platoDao.ingresar(plato2);
 
             //ingreso 3 getPlatoDao al restaurante2
-            Plato plato3= new Plato(restauranteId2,"Empanada criolla","dsdsdsd",new byte[]{2,5,5});
+            Plato plato3= new Plato(restauranteId2,"Empanada criolla","dsdsdsd",null);
             platoDao.ingresar(plato3);
-            Plato plato4= new Plato(restauranteId2,"Empanada Ropa vieja","dsdsdsd",new byte[]{2,5,5});
+            Plato plato4= new Plato(restauranteId2,"Empanada Ropa vieja","dsdsdsd",null);
             platoDao.ingresar(plato4);
-            Plato plato5= new Plato(restauranteId2,"Empanda tradicional","dsdsdsd",new byte[]{2,5,5});
+            Plato plato5= new Plato(restauranteId2,"Empanda tradicional","dsdsdsd",null);
             platoDao.ingresar(plato5);
 
             //ingreso opiniones al restaurate1

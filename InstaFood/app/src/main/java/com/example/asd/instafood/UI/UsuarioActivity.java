@@ -47,7 +47,6 @@ public class UsuarioActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usuario);
         usuarioActivityViewModel=ViewModelProviders.of(this).get(UsuarioActivityViewModel.class);
-
         //Obtengo los datos que envian desde otra activity
         Intent intent=getIntent();
         emailUsuario=intent.getStringExtra("Email");
@@ -157,6 +156,11 @@ public class UsuarioActivity extends AppCompatActivity
                     email.setText(usuario.getEmail());
                     nombre.setText(usuario.getNombre());
                     apellido.setText(usuario.getApellido());
+                    if(usuario.getImageArray()!=null)
+                    {
+                        Bitmap bitmap= BitmapFactory.decodeByteArray(usuario.getImageArray(),0,usuario.getImageArray().length);
+                        imageViewUsuario.setImageBitmap(bitmap);
+                    }
                 }
             }
         });

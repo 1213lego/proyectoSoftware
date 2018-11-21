@@ -3,9 +3,11 @@ package com.example.asd.instafood.UI;
 import android.Manifest;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Location;
+import android.location.LocationManager;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
@@ -41,7 +43,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private GoogleMap mMap;
     private boolean locationEnable;
     private RestaurantesMapsViewModel restaurantesMapsViewModel;
-
+    private LocationManager locManager;
+    private Location loc;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,9 +87,9 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
         else
         {
-            mMap.setMyLocationEnabled(true);
             locationEnable=true;
         }
+        mMap.setMyLocationEnabled(true);
 
         mMap.setOnMarkerClickListener(this);
         mMap.setOnInfoWindowClickListener(this);
@@ -94,6 +97,9 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         mMap.setOnInfoWindowLongClickListener(this);
         mMap.setInfoWindowAdapter(new CustomInfoWindowAdapter());
         mMap.getUiSettings().setZoomControlsEnabled(true);
+        locManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        loc = locManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+
         crearMakers();
     }
 
@@ -133,7 +139,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 }
             }
         });
-        /*int radius = 1000;
+        int radius = 1;
         CircleOptions circleOptions = new CircleOptions()
                 .center(toroRojo)
                 .radius(radius)
@@ -141,7 +147,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 .strokeWidth(4)
                 .fillColor(Color.parseColor("#AF4046FF"));
         Circle circle = mMap.addCircle(circleOptions);
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(toroRojo, 17));*/
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(toroRojo, 17));
+
 
     }
     @Override
@@ -170,7 +177,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults)
+    {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 

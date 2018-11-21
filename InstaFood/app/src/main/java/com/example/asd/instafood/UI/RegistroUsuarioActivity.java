@@ -4,6 +4,7 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -23,8 +24,14 @@ import com.example.asd.instafood.R;
 import com.example.asd.instafood.ViewModels.LoginActivityViewModel;
 import com.example.asd.instafood.ViewModels.RegistroRestauranteViewModel;
 import com.example.asd.instafood.ViewModels.RegistroUsuarioViewModel;
+import com.example.asd.instafood.db.models.Anunciante;
+import com.example.asd.instafood.db.models.Estados;
+import com.example.asd.instafood.db.models.TipoUsuario;
+import com.example.asd.instafood.db.models.Usuario;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.util.Date;
 
 public class RegistroUsuarioActivity extends AppCompatActivity {
     // Constantes
@@ -37,15 +44,24 @@ public class RegistroUsuarioActivity extends AppCompatActivity {
     private Button btnExaminar;
     private String mPath;
     private ImageView imgUsuario;
-
+    private EditText txtEmail;
+    private EditText txtNombre;
+    private EditText txtApellido;
+    private EditText txtpasword;
+    private RadioButton rbTipoUsuario;
+    private RegistroUsuarioViewModel viewModel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_usuario);
-
+        viewModel=ViewModelProviders.of(this).get(RegistroUsuarioViewModel.class);
         btnExaminar = (Button) findViewById(R.id.btnExaminar);
         imgUsuario = (ImageView) findViewById(R.id.imgRestaurante);
-
+        txtNombre=findViewById(R.id.txtNombre);
+        txtApellido=findViewById(R.id.txtApellido);
+        txtEmail=findViewById(R.id.txtEmail);
+        txtpasword=findViewById(R.id.txtPassword);
+        rbTipoUsuario=findViewById(R.id.rbAnunciante);
         btnExaminar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,7 +91,15 @@ public class RegistroUsuarioActivity extends AppCompatActivity {
 
         builder.show();
     }
-
+    private boolean validar()
+    {
+        if(TextUtils.isEmpty(txtEmail.getText()) || TextUtils.isEmpty(txtNombre.getText())
+                || TextUtils.isEmpty(txtApellido.getText()) || TextUtils.isEmpty(txtApellido.getText()))
+        {
+            return false;
+        }
+        return true;
+    }
     private void openCamera()
     {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -85,7 +109,26 @@ public class RegistroUsuarioActivity extends AppCompatActivity {
     {
         if(view.getId()==R.id.btnRegistar)
         {
-
+            if(validar())
+            {
+                Bitmap bitmap = ((BitmapDrawable) imgUsuario.getDrawable()).getBitmap();
+                ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+                byte[] imageInByte = baos.toByteArray();
+                char tipo= rbTipoUsuario.isChecked() ? TipoUsuario.USUARIO_ANUNCIANTE : TipoUsuario.USUARIO_NORMAL;
+                Usuario user= new Usuario(txtEmail.getText().toString(),txtNombre.getText().toString(), txtApellido.getText().toString()
+                        ,txtpasword.getText().toString(),Estados.ESTADO_ACTIVO,tipo,imageInByte);
+                viewModel.ingresar(user);
+                if(tipo==TipoUsuario.USUARIO_ANUNCIANTE)
+                {
+                    Anunciante anunciante= new Anunciante(txtEmail.getText().toString(),5000,new Date());
+                    viewModel.ingresar(anunciante);
+                }
+            }
+            else
+            {
+                Toast.makeText(this, "Verificar los campos", Toast.LENGTH_SHORT).show();
+            }
         }
     }
 
