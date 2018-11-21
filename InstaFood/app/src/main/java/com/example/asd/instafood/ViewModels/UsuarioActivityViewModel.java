@@ -12,27 +12,11 @@ import com.example.asd.instafood.db.models.Usuario;
 
 import java.util.List;
 
-public class UsuarioActivityViewModel extends AndroidViewModel
+public class UsuarioActivityViewModel extends SuperAndroidViewModel
 {
-    private Repository repository;
-
     public UsuarioActivityViewModel(@NonNull Application application)
     {
         super(application);
-        repository=new Repository(application);
-    }
-
-    public void actualizar(IDto iDto)
-    {
-        repository.actualizar(iDto);
-    }
-    public void eliminar(IDto iDto)
-    {
-        repository.eliminar(iDto);
-    }
-    public void ingresar(IDto iDto)
-    {
-        repository.ingresar(iDto);
     }
     public LiveData<List<Restaurante>> darLiveDataRestaurantesFavoritosPorEmail(String email)
     {

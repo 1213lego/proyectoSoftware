@@ -32,25 +32,20 @@ public class MainActivity extends AppCompatActivity
     }
     public void openMap(View view)
     {
-        if(view.getId()==R.id.btnVistaRestaurante)
+       /* if(view.getId()==R.id.btnVistaRestaurante)
         {
            Intent intent=new Intent(this,MapsActivity.class);
            startActivity(intent);
 
-        }
-        else if(view.getId()==R.id.btnVistaRestaurante)
+        }*/
+        if(view.getId()==R.id.btnVistaRestaurante)
         {
             Intent intent=new Intent(this,UsuarioActivity.class);
             intent.putExtra("Email","usuario1@usuario1.com");
             startActivity(intent);
         }
-        Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
     }
 
-    public void toast(String mensaje)
-    {
-        Toast.makeText(this,mensaje,Toast.LENGTH_LONG).show();
-    }
 
 
     public void openLogin(View view)

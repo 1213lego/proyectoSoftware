@@ -3,6 +3,8 @@ package com.example.asd.instafood.UI;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.arch.lifecycle.Observer;
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
@@ -33,6 +35,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.asd.instafood.R;
+import com.example.asd.instafood.ViewModels.LoginActivityViewModel;
+import com.example.asd.instafood.db.models.Estados;
+import com.example.asd.instafood.db.models.TipoUsuario;
+import com.example.asd.instafood.db.models.Usuario;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -78,7 +84,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
     private SignInButton signInGoogle;
     private GoogleApiClient googleApiClient;
-
+    private LoginActivityViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -87,10 +93,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         setContentView(R.layout.activity_login);
 
         // Set up the login form.
-        mEmailView = (AutoCompleteTextView) findViewById(R.id.txtEmail);
+        mEmailView = findViewById(R.id.txtEmail);
         populateAutoComplete();
-
-
+        viewModel= ViewModelProviders.of(this).get(LoginActivityViewModel.class);
         mPasswordView = (EditText) findViewById(R.id.txtPassword);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener()
         {
@@ -109,12 +114,11 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         Button mEmailSignInButton = (Button) findViewById(R.id.btnIniciarSesion);
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
-            public void onClick(View view) {
-                attemptLogin();
+            public void onClick(View view)
+            {
+                signIn();
             }
         });
-
-
         //google login
 
         signInGoogle = (SignInButton)findViewById(R.id.btnIniciarConGoogle);
@@ -268,8 +272,30 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
     private void signIn()
     {
-        Toast.makeText(this,mEmailView.getText() , Toast.LENGTH_SHORT).show();
-
+        if(mEmailView.getText().toString()!=null && mPasswordView.getText().toString()!=null)
+        {
+            Usuario prueba=viewModel.darUsuario(mEmailView.getText().toString()).getValue();
+            viewModel.darUsuario(mEmailView.getText().toString()).observe(this, new Observer<Usuario>() {
+                @Override
+                public void onChanged(@Nullable Usuario usuario) {
+                    if(usuario!=null)
+                    {
+                        if(usuario.getContrasenia().equals(mPasswordView.getText().toString()) &&
+                                usuario.getApellido().equals(mEmailView.getText().toString()))
+                        {
+                            if(usuario.getTipoUsuario()==TipoUsuario.USUARIO_NORMAL)
+                            {
+                                lanzarUsuario(usuario.getEmail());
+                            }
+                            else if(usuario.getTipoUsuario()==TipoUsuario.USUARIO_ANUNCIANTE)
+                            {
+                                lanzarAnunciante(usuario.getEmail());
+                            }
+                        }
+                    }
+                }
+            });
+        }
     }
 
     private void signInWithGoogle()
@@ -291,22 +317,51 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
     private void handleResult(GoogleSignInResult result)
     {
-
         if(result.isSuccess())
         {
             GoogleSignInAccount account = result.getSignInAccount();
-
-            //aqui se obtiene toda la informacion del usuario
-            //String name = account.getDisplayName();
-            String email = account.getEmail();
-            //String img_url = account.getPhotoUrl();
-            //mEmailView.setText(email);
-            Toast.makeText(this, email, Toast.LENGTH_SHORT).show();
-
+            final String name = account.getDisplayName();
+            final String email = account.getEmail();
+            viewModel.darUsuario(email).observe(this, new Observer<Usuario>() {
+                @Override
+                public void onChanged(@Nullable Usuario usuario)
+                {
+                    if(usuario!=null)
+                    {
+                        if(usuario.getTipoUsuario()==TipoUsuario.USUARIO_NORMAL)
+                        {
+                            lanzarUsuario(usuario.getEmail());
+                        }
+                        else if(usuario.getTipoUsuario()==TipoUsuario.USUARIO_ANUNCIANTE)
+                        {
+                            lanzarAnunciante(usuario.getEmail());
+                        }
+                    }
+                    else
+                    {
+                        crearUsuario(email, name);
+                    }
+                }
+            });
         }
+    }
+    public void lanzarUsuario(String correo)
+    {
+        Intent intent= new Intent(this,UsuarioActivity.class);
+        intent.putExtra("Email",correo);
+        startActivity(intent);
+    }
+    public void lanzarAnunciante(String correo)
+    {
+        Intent intent= new Intent(this,AnuncianteActivity.class);
+        intent.putExtra("Email",correo);
+        startActivity(intent);
+    }
+    public void  crearUsuario(String email,String nombre)
+    {
+        viewModel.ingresar(new Usuario(email,nombre,nombre,"",Estados.ESTADO_ACTIVO,TipoUsuario.USUARIO_NORMAL,null));
 
     }
-
     private void addEmailsToAutoComplete(List<String> emailAddressCollection) {
         //Create adapter to tell the AutoCompleteTextView what to show in its dropdown list.
         ArrayAdapter<String> adapter =
@@ -318,25 +373,11 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     @Override
     public void onClick(View v)
     {
-        switch (v.getId())
+        if(v.getId()==R.id.btnIniciarConGoogle)
         {
-
-            case R.id.btnIniciarConGoogle:
-                signInWithGoogle();
-                break;
-
-            case  R.id.btnIniciarSesion:
-                signIn();
-                break;
-
-
+            signInWithGoogle();
         }
-
-
-
     }
-
-
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 

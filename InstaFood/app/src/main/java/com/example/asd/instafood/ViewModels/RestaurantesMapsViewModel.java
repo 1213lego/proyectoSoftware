@@ -10,14 +10,12 @@ import com.example.asd.instafood.db.models.Restaurante;
 
 import java.util.List;
 
-public class RestaurantesMapsViewModel extends AndroidViewModel
+public class RestaurantesMapsViewModel extends SuperAndroidViewModel
 {
 
-    private Repository repository;
     public RestaurantesMapsViewModel(@NonNull Application application)
     {
         super(application);
-        repository=new Repository(application);
     }
     public LiveData<List<Restaurante>> darLiveDataRestaurantes()
     {
