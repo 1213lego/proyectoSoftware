@@ -1,19 +1,28 @@
 package com.example.asd.instafood.UI;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.asd.instafood.R;
+import com.example.asd.instafood.ViewModels.RegistroPlatoViewModel;
+import com.example.asd.instafood.db.models.Plato;
+
+import java.io.ByteArrayOutputStream;
 
 
 public class RegistroPlatoActivity extends AppCompatActivity {
@@ -26,15 +35,20 @@ public class RegistroPlatoActivity extends AppCompatActivity {
 
     private Button btnExaminar;
     private ImageView imgPlato;
-
+    private int idRestaurante;
+    private EditText nombrePlato;
+    private EditText descripcionPlato;
+    private RegistroPlatoViewModel viewModel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_plato);
-
+        viewModel=ViewModelProviders.of(this).get(RegistroPlatoViewModel.class);
         btnExaminar = (Button) findViewById(R.id.btnExaminar);
-        imgPlato = (ImageView) findViewById(R.id.imgRestaurante);
-
+        imgPlato = (ImageView) findViewById(R.id.imagenPlato);
+        idRestaurante=getIntent().getIntExtra("Id",-1);
+        nombrePlato=findViewById(R.id.txtNombrePlato);
+        descripcionPlato=findViewById(R.id.txtDescripcionPlato);
         btnExaminar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,23 +99,27 @@ public class RegistroPlatoActivity extends AppCompatActivity {
         }
     }
 
-    public void openRegistroPlato(View view)
-    {
-        if(view.getId() == R.id.btnAgregarPlato)
-        {
-            //todo agregar el plato a la db
-
-            Intent intent=new Intent(this,RegistroPlatoActivity.class);
-            startActivity(intent);
-        }
-    }
     public void openAnuncianteActivity(View view)
     {
         if(view.getId() == R.id.btnFinalizar)
         {
             //todo agregar el plato a la db
-            Intent intent=new Intent(this,AnuncianteActivity.class);
-            startActivity(intent);
+            if(TextUtils.isEmpty(descripcionPlato.getText())|| TextUtils.isEmpty(nombrePlato.getText()))
+            {
+                Toast.makeText(this, "No has llenado los campos", Toast.LENGTH_SHORT).show();
+            }
+            else
+            {
+                Bitmap bitmap = ((BitmapDrawable) imgPlato.getDrawable()).getBitmap();
+                ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+                byte[] imageInByte = baos.toByteArray();
+                Plato plato= new Plato(idRestaurante,nombrePlato.getText().toString(),descripcionPlato.getText().toString(),imageInByte);
+                viewModel.ingresar(plato);
+                Intent intent= new Intent();
+                setResult(RESULT_OK,intent);
+                finish();
+            }
         }
     }
 

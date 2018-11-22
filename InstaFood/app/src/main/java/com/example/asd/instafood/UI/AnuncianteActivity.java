@@ -132,7 +132,7 @@ public class AnuncianteActivity extends AppCompatActivity
             public void onItemClick(Restaurante restaurante)
             {
                 // lanzar unn intent con la vista de un restaurante mas detallada, en esta vista deben estan los platos del restaurante
-                Intent intent= new Intent(AnuncianteActivity.this,RestauranteActivity.class);
+                Intent intent= new Intent(AnuncianteActivity.this,RestauranteActivityAnunciante.class);
                 intent.putExtra("Id",restaurante.getRestauranteId());
                 startActivity(intent);
             }
