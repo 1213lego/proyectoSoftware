@@ -4,20 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.AnuncianteActivity"
+    tools:context=".UI.UsuarioActivity"
     tools:layout_editor_absoluteY="25dp">
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/botonNuevoRestaurante"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:src="@drawable/ic_add"
-        app:layout_anchorGravity="right|bottom"
-        tools:layout_editor_absoluteX="345dp"
-        tools:layout_editor_absoluteY="467dp" />
     <ImageView
-        android:id="@+id/imgFondo"
+        android:id="@+id/imageView11"
         android:layout_width="381dp"
         android:layout_height="230dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,7 +25,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:layout_weight="1"
-        app:layout_constraintBottom_toBottomOf="@+id/imgFondo"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView11"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/default_user" />
@@ -71,10 +62,10 @@
         app:layout_constraintBottom_toTopOf="@+id/imgUsuario"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imgFondo" />
+        app:layout_constraintTop_toTopOf="@+id/imageView11" />
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerViewPlatos"
+        android:id="@+id/recyclerViewMisRestaurantes"
         android:layout_width="345dp"
         android:layout_height="187dp"
         android:layout_marginStart="2dp"
@@ -101,12 +92,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.705"
         app:layout_constraintStart_toStartOf="parent"
-<<<<<<< HEAD
         app:layout_constraintTop_toBottomOf="@+id/imageView11" />
 
-=======
-        app:layout_constraintTop_toBottomOf="@+id/imgFondo" />
->>>>>>> ac7a91a05945e686de269748d7432a521a6bcd6c
 
     <Button
         android:id="@+id/btnBuscarRestaurantes"
@@ -158,7 +145,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/fondobtns" />
 
-<<<<<<< HEAD
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/botonNuevoRestaurante"
         android:layout_width="wrap_content"
@@ -174,6 +160,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imgfondobootones"
         app:layout_constraintVertical_bias="0.833" />
-=======
->>>>>>> ac7a91a05945e686de269748d7432a521a6bcd6c
 </android.support.constraint.ConstraintLayout>
+

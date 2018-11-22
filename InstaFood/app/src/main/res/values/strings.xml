@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Modica</string>
+    <string name="app_name">InstaFood</string>
     <string name="title_activity_restaurantes_maps">Mapa Restaurantes</string>
     <string name="marker_detail_latlng">(%1$.2f, %2$.2f)</string>
     <string name="map_not_ready">map not ready</string>

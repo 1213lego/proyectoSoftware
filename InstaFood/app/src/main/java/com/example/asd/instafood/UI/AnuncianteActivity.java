@@ -31,7 +31,7 @@ import java.util.List;
 
 public class AnuncianteActivity extends AppCompatActivity
 {
-    public static  final  int REQUEST_CODE_CREAR_RESTAURANTE=3;
+    public static final int REQUEST_CODE_CREAR_RESTAURANTE=3;
     private AnuncianteViewModel viewModel;
     private String emailUsuario;
     private List<Restaurante> restauranteList;
@@ -51,22 +51,11 @@ public class AnuncianteActivity extends AppCompatActivity
         //Obtengo los datos que envian desde otra activity
         Intent intent=getIntent();
         emailUsuario=intent.getStringExtra("Email");
-
         imageViewUsuario=findViewById(R.id.imgUsuario);
         nombre= findViewById(R.id.txtNombre);
         apellido= findViewById(R.id.txtApellidos);
         btnBuscarRes=(Button) findViewById(R.id.btnBuscarRestaurantes);
 
-        //TODO ACCEDER A LA BASE DE DATOS
-
-        //ACCEDO A LA TABLA Y GUARDO LA INFORMACION
-
-        //Para el recyclerview
-        recyclerView=findViewById(R.id.recyclerViewPlatos);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setHasFixedSize(true);
-        cargarUsuario();
-        cargarRestaurantesFavoritosRecyclerview();
         floatingActionButtonAdd=findViewById(R.id.botonNuevoRestaurante);
         floatingActionButtonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,14 +75,20 @@ public class AnuncianteActivity extends AppCompatActivity
                 }
             }
         });
-
+        //Para el recyclerview
+        recyclerView=findViewById(R.id.recyclerViewMisRestaurantes);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setHasFixedSize(true);
+        cargarAnunciante();
+        cargarRestaurantesMisRecyclerview();
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data)
     {
     }
 
-    private void cargarRestaurantesFavoritosRecyclerview()
+    private void cargarRestaurantesMisRecyclerview()
     {
         final RestauranteFavoritoAdapter restauranteAdapter= new RestauranteFavoritoAdapter();
         recyclerView.setAdapter(restauranteAdapter);
@@ -123,6 +118,7 @@ public class AnuncianteActivity extends AppCompatActivity
                 viewModel.eliminar(restaurante);
                 Toast.makeText(AnuncianteActivity.this, "Restaurante Eliminado", Toast.LENGTH_SHORT).show();
 
+
             }
         }).attachToRecyclerView(recyclerView);
 
@@ -131,15 +127,13 @@ public class AnuncianteActivity extends AppCompatActivity
             @Override
             public void onItemClick(Restaurante restaurante)
             {
-                // lanzar unn intent con la vista de un restaurante mas detallada, en esta vista deben estan los platos del restaurante
-                Intent intent= new Intent(AnuncianteActivity.this,RestauranteActivityAnunciante.class);
-                intent.putExtra("Id",restaurante.getRestauranteId());
-                startActivity(intent);
+               Intent intent= new Intent(AnuncianteActivity.this,RestauranteActivity.class);
+               intent.putExtra("Id",restaurante.getRestauranteId());
             }
         });
     }
 
-    private void cargarUsuario()
+    private void cargarAnunciante()
     {
         viewModel.darLiveDataUsuario(emailUsuario).observe(this, new Observer<Usuario>()
         {
@@ -147,7 +141,6 @@ public class AnuncianteActivity extends AppCompatActivity
             public void onChanged(@Nullable Usuario usuario) {
                 if(usuario!=null)
                 {
-                    //email.setText(usuario.getEmail());
                     nombre.setText(usuario.getNombre());
                     apellido.setText(usuario.getApellido());
                     if(usuario.getImageArray()!=null)
@@ -159,5 +152,4 @@ public class AnuncianteActivity extends AppCompatActivity
             }
         });
     }
-
 }
