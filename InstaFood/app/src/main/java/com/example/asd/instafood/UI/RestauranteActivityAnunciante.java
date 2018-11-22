@@ -1,33 +1,33 @@
 package com.example.asd.instafood.UI;
 
-import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.asd.instafood.R;
 import com.example.asd.instafood.RecyclerViewsAdapters.PlatosAdapter;
-import com.example.asd.instafood.RecyclerViewsAdapters.RestauranteFavoritoAdapter;
 import com.example.asd.instafood.ViewModels.RestauranteActivityViewModel;
 import com.example.asd.instafood.db.models.Plato;
 import com.example.asd.instafood.db.models.Restaurante;
-import com.example.asd.instafood.db.models.RestauranteFavorito;
 
 import java.util.List;
 
-public class RestauranteActivity extends AppCompatActivity
+public class RestauranteActivityAnunciante extends AppCompatActivity
 {
+    public static  final  int REQUEST_CODE_CREAR_PlATO=4;
     private int idRestaurante;
     private TextView labName;
     private TextView labDescripcion;
@@ -35,12 +35,12 @@ public class RestauranteActivity extends AppCompatActivity
     private RestauranteActivityViewModel viewModel;
     private List<Plato> platoList;
     private RecyclerView recyclerView;
-
+    private FloatingActionButton floatingActionButtonAdd;
     @Override
-    protected void onCreate(Bundle savedInstanceState) 
+    protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_restaurante);
+        setContentView(R.layout.activity_restaurante_anunciante);
         idRestaurante=getIntent().getIntExtra("Id",-1);
         viewModel=ViewModelProviders.of(this).get(RestauranteActivityViewModel.class);
         recyclerView=findViewById(R.id.recyclerViewPlatos);
@@ -50,7 +50,15 @@ public class RestauranteActivity extends AppCompatActivity
         labName=findViewById(R.id.labName);
         labDescripcion=findViewById(R.id.labDesEditable);
         imageView=findViewById(R.id.imgLogoRest);
-
+        floatingActionButtonAdd=findViewById(R.id.botonNuevoPlato);
+        floatingActionButtonAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(RestauranteActivityAnunciante.this,RegistroPlatoActivity.class);
+                intent.putExtra("Id",idRestaurante);
+                startActivityForResult(intent,REQUEST_CODE_CREAR_PlATO);
+            }
+        });
         cargarInfoRestaurante();
         cargarPlatosRecyclerView();
     }
@@ -88,15 +96,19 @@ public class RestauranteActivity extends AppCompatActivity
             @Override
             public void onItemClick(Plato plato) {
                 //
-                Toast.makeText(RestauranteActivity.this, "lanzar vista plato", Toast.LENGTH_SHORT).show();
+                Toast.makeText(RestauranteActivityAnunciante.this, "lanzar vista plato", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data)
+    {
     }
     private void cargarInfoRestaurante()
     {
         viewModel.consultarRestauranteID(idRestaurante).observe(this, new Observer<Restaurante>() {
             @Override
-            public void onChanged(@Nullable Restaurante restaurante) 
+            public void onChanged(@Nullable Restaurante restaurante)
             {
                 if(restaurante!=null)
                 {
