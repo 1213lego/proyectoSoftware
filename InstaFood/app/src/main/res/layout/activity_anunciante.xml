@@ -86,7 +86,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="12dp"
-        android:background="@drawable/favbanner"
+        android:background="@drawable/restbanner"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/recyclerViewPlatos"
         app:layout_constraintEnd_toEndOf="parent"
@@ -95,25 +95,25 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView11" />
 
 
-
     <Button
         android:id="@+id/btnBuscarRestaurantes"
         android:layout_width="110dp"
         android:layout_height="46dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:layout_weight="1"
         android:background="@drawable/mapbtn"
         android:onClick="prueba"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/recyclerViewPlatos"
-        app:layout_constraintStart_toStartOf="@+id/recyclerViewPlatos" />
+        app:layout_constraintEnd_toStartOf="@+id/btnPerfil"
+        app:layout_constraintStart_toEndOf="@+id/btnHome" />
 
     <Button
         android:id="@+id/btnPerfil"
         android:layout_width="110dp"
         android:layout_height="46dp"
-        android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:layout_weight="1"
@@ -121,22 +121,19 @@
         android:onClick="prueba"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnBuscarRestaurantes" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/btnHome"
         android:layout_width="110dp"
         android:layout_height="46dp"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:layout_weight="1"
         android:background="@drawable/homebtn"
         android:onClick="prueba"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnBuscarRestaurantes"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
@@ -145,7 +142,6 @@
         android:layout_height="90dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/fondobtns" />
 
@@ -154,9 +150,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:src="@drawable/ic_add"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/addrestbtn"
+        android:src="@drawable/addrestbtn"
+        app:backgroundTint="@color/colorPrimary"
         app:layout_anchorGravity="right|bottom"
-        tools:layout_editor_absoluteX="345dp"
-        tools:layout_editor_absoluteY="467dp" />
+        app:layout_constraintBottom_toTopOf="@+id/btnPerfil"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imgfondobootones"
+        app:layout_constraintVertical_bias="0.833" />
 </android.support.constraint.ConstraintLayout>
 

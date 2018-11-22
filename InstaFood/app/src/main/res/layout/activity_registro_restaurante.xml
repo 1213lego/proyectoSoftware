@@ -5,232 +5,193 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UI.RegistroRestauranteActivity"
-    tools:layout_editor_absoluteY="81dp">
+    tools:layout_editor_absoluteY="25dp">
 
-    <LinearLayout
-        android:id="@+id/layoutTelefono"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+
+    <ImageView
+        android:id="@+id/imgfondo"
+        android:layout_width="382dp"
+        android:layout_height="640dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.506"
+        app:srcCompat="@drawable/fondoagregarrestaurante" />
+
+    <TextView
+        android:id="@+id/labTitulo"
+        android:layout_width="204dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/agregarrestaurante"
+        android:gravity="center"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgRestaurante"
+        android:layout_width="123dp"
+        android:layout_height="123dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:orientation="vertical"
+        android:src="@drawable/descarga"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayoutApellido">
+        app:layout_constraintTop_toBottomOf="@+id/labTitulo" />
 
-        <TextView
-            android:id="@+id/labTelefonoContacto"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="8dp"
-            android:text="Teléfono de contacto del restaurante: "
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/linearLayoutApellido" />
+    <Button
+        android:id="@+id/btnExaminar"
+        android:layout_width="33dp"
+        android:layout_height="33dp"
+        android:background="@drawable/addimageicon"
+        android:onClick="openImageChooser"
+        android:text="+"
+        app:layout_constraintBottom_toBottomOf="@+id/imgRestaurante"
+        app:layout_constraintEnd_toEndOf="@+id/imgRestaurante"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/imgRestaurante"
+        app:layout_constraintTop_toTopOf="@+id/imgRestaurante"
+        app:layout_constraintVertical_bias="1.0" />
 
-        <EditText
-            android:id="@+id/txtTelContacto"
-            android:layout_width="318dp"
-            android:layout_height="37dp"
-            android:layout_marginStart="16dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            app:layout_constraintStart_toStartOf="@+id/linearLayoutApellido"
-            app:layout_constraintTop_toBottomOf="@+id/labNombre" />
+    <EditText
+        android:id="@+id/txtNombre"
+        android:layout_width="225dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/recttxts"
+        android:ems="10"
+        android:hint="Nombre del restaurante"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textColorHint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgRestaurante" />
 
-    </LinearLayout>
-
-    <FrameLayout
-        android:id="@+id/frameTitulo"
-        android:layout_width="368dp"
-        android:layout_height="0dp"
+    <EditText
+        android:id="@+id/txtTelContacto"
+        android:layout_width="225dp"
+        android:layout_height="45dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="369dp"
-        app:layout_constraintBottom_toTopOf="@+id/txtDireccion"
+        android:background="@drawable/recttxts"
+        android:ems="10"
+        android:hint="Teléfono de contacto"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/txtNombre" />
 
-        <TextView
-            android:id="@+id/labTitulo"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/border"
-            android:gravity="center"
-
-            android:text="AGREGA TU RESTAURANTE"
-            android:textAlignment="center" />
-    </FrameLayout>
-
-    <FrameLayout
-        android:id="@+id/frameImagen"
-        android:layout_width="193dp"
-        android:layout_height="130dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameTitulo">
-
-        <ImageView
-            android:id="@+id/imgRestaurante"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/descarga" />
-
-        <Button
-            android:id="@+id/btnExaminar"
-            android:layout_width="35dp"
-            android:layout_height="38dp"
-            android:onClick="openImageChooser"
-            android:text="+" />
-    </FrameLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayoutApellido"
-        android:layout_width="368dp"
-        android:layout_height="wrap_content"
+    <EditText
+        android:id="@+id/txtDireccion"
+        android:layout_width="225dp"
+        android:layout_height="45dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:orientation="vertical"
+        android:background="@drawable/recttxts"
+        android:ems="10"
+        android:hint="Direccion"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameImagen">
+        app:layout_constraintTop_toBottomOf="@+id/txtTelContacto" />
 
-        <TextView
-            android:id="@+id/labNombre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="8dp"
-            android:text="Especifica el nombre del restaurante: "
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/linearLayoutApellido" />
-
-        <EditText
-            android:id="@+id/txtNombre"
-            android:layout_width="320dp"
-            android:layout_height="32dp"
-            android:layout_marginStart="16dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            app:layout_constraintStart_toStartOf="@+id/linearLayoutApellido"
-            app:layout_constraintTop_toBottomOf="@+id/labNombre" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayoutDescripcion"
-        android:layout_width="wrap_content"
-        android:layout_height="52dp"
+    <Spinner
+        android:id="@+id/listaRestaurantes"
+        android:layout_width="225dp"
+        android:layout_height="45dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:orientation="vertical"
+        android:background="@drawable/recttxts"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listaRestaurantes">
+        app:layout_constraintTop_toBottomOf="@+id/txtDireccion" />
 
-        <TextView
-            android:id="@+id/labDescripcion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Descripcion:" />
+    <EditText
+        android:id="@+id/txtDescripcion"
+        android:layout_width="225dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/descrectangle"
+        android:ems="10"
+        android:hint="Descripción"
+        android:inputType="textMultiLine"
+        android:textAlignment="center"
+        android:textColorHint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listaRestaurantes" />
 
-        <EditText
-            android:id="@+id/txtDescripcion"
-            android:layout_width="289dp"
-            android:layout_height="31dp"
-            android:ems="10"
-            android:inputType="textMultiLine" />
+    <Button
+        android:id="@+id/btnGuardar"
+        android:layout_width="153dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/guardarbtn"
+        android:onClick="GuardarRes"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    </LinearLayout>
+    <ImageButton
+        android:id="@+id/btnUbicarRestaurante"
+        android:layout_width="153dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/orangebtn"
+        android:onClick="openMap"
+        android:src="@android:drawable/ic_menu_mylocation"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/labTipoComida"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="20dp"
-        android:text="Tipo de comida: "
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layoutTelefono" />
-
-    <Spinner
-        android:id="@+id/listaRestaurantes"
-        android:layout_width="200dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/labTipoComida"
-        app:layout_constraintTop_toBottomOf="@+id/layoutTelefono" />
-
-    <FrameLayout
-        android:id="@+id/frameLayout"
-        android:layout_width="114dp"
-        android:layout_height="38dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <Button
-            android:id="@+id/btnGuardar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="GuardarRes"
-            android:text="Guardar"
-            android:textSize="12sp" />
-    </FrameLayout>
-
-    <TextView
-        android:id="@+id/labUbicarRestaurante"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="6dp"
-        android:layout_marginBottom="71dp"
-        android:text="Ubica tu restaurante"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/frameLayout"
-        app:layout_constraintTop_toBottomOf="@+id/txtDireccion" />
-
-    <ImageButton
-        android:id="@+id/btnUbicarRestaurante"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="40dp"
         android:layout_marginBottom="8dp"
-        android:onClick="openMap"
-        android:src="@android:drawable/ic_menu_mylocation"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/frameLayout"
-        app:layout_constraintHorizontal_bias="0.987"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/labUbicarRestaurante"
-        app:layout_constraintVertical_bias="1.0" />
+        android:text="Tipo de comida"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtDescripcion"
+        app:layout_constraintEnd_toEndOf="@+id/listaRestaurantes"
+        app:layout_constraintStart_toStartOf="@+id/listaRestaurantes"
+        app:layout_constraintTop_toTopOf="@+id/listaRestaurantes" />
 
-    <EditText
-        android:id="@+id/txtDireccion"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="45dp"
-        android:layout_marginEnd="45dp"
-        android:layout_marginBottom="11dp"
-        android:ems="10"
-        android:hint="Direccion"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/labUbicarRestaurante"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameTitulo" />
+    <ImageView
+        android:id="@+id/imgscroll"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtDescripcion"
+        app:layout_constraintEnd_toEndOf="@+id/listaRestaurantes"
+        app:layout_constraintStart_toEndOf="@+id/labTipoComida"
+        app:layout_constraintTop_toTopOf="@+id/listaRestaurantes"
+        app:srcCompat="@drawable/downarrow" />
 
 </android.support.constraint.ConstraintLayout>

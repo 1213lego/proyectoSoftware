@@ -110,7 +110,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginBottom="17dp"
 
-        android:text="@string/iniciar_ses"
+        android:text="Iniciar Sesión"
         android:textAppearance="@style/iniciar_ses"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayoutLogin"
