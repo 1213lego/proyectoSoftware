@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegistroRestauranteActivity"
+    tools:context=".UI.RegistroRestauranteActivity"
     tools:layout_editor_absoluteY="81dp">
 
     <LinearLayout
@@ -44,10 +44,12 @@
     <FrameLayout
         android:id="@+id/frameTitulo"
         android:layout_width="368dp"
-        android:layout_height="46dp"
+        android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="369dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtDireccion"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -183,8 +185,8 @@
             android:id="@+id/btnGuardar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="openRegistroPlato"
-            android:text="Siguiente"
+            android:onClick="GuardarRes"
+            android:text="Guardar"
             android:textSize="12sp" />
     </FrameLayout>
 
@@ -192,13 +194,12 @@
         android:id="@+id/labUbicarRestaurante"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="71dp"
         android:text="Ubica tu restaurante"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayoutDescripcion" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/frameLayout"
+        app:layout_constraintTop_toBottomOf="@+id/txtDireccion" />
 
     <ImageButton
         android:id="@+id/btnUbicarRestaurante"
@@ -216,5 +217,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/labUbicarRestaurante"
         app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/txtDireccion"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginBottom="11dp"
+        android:ems="10"
+        android:hint="Direccion"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/labUbicarRestaurante"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameTitulo" />
 
 </android.support.constraint.ConstraintLayout>

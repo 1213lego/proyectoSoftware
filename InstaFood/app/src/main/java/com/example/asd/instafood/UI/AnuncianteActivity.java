@@ -31,7 +31,7 @@ import java.util.List;
 
 public class AnuncianteActivity extends AppCompatActivity
 {
-
+    public static final int REQUEST_CODE_CREAR_RESTAURANTE=3;
     private AnuncianteViewModel viewModel;
     private String emailUsuario;
     private List<Restaurante> restauranteList;
@@ -63,7 +63,18 @@ public class AnuncianteActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(AnuncianteActivity.this,RegistroRestauranteActivity.class);
-                startActivity(intent);
+                intent.putExtra("Email",emailUsuario);
+                intent.putExtra("Id",id);
+                startActivityForResult(intent,REQUEST_CODE_CREAR_RESTAURANTE);
+            }
+        });
+        viewModel.darAnunciante(emailUsuario).observe(this, new Observer<Anunciante>() {
+            @Override
+            public void onChanged(@Nullable Anunciante anunciante) {
+                if(anunciante!=null)
+                {
+                    id=anunciante.getIdAnunciante();
+                }
             }
         });
         //Para el recyclerview
@@ -72,6 +83,22 @@ public class AnuncianteActivity extends AppCompatActivity
         recyclerView.setHasFixedSize(true);
         cargarAnunciante();
         cargarRestaurantesMisRecyclerview();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data)
+    {
+        if(requestCode==REQUEST_CODE_CREAR_RESTAURANTE)
+        {
+            if(requestCode==RESULT_OK)
+            {
+                Toast.makeText(this, "Se ha agregado el nuevo restaurante", Toast.LENGTH_SHORT).show();
+            }
+            else 
+            {
+                Toast.makeText(this, "No se registro el Restaurante", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 
     private void cargarRestaurantesMisRecyclerview()

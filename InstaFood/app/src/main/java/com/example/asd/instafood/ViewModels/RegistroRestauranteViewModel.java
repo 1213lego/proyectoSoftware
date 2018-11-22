@@ -6,6 +6,7 @@ import android.arch.lifecycle.LiveData;
 import android.support.annotation.NonNull;
 
 import com.example.asd.instafood.Repositories.Repository;
+import com.example.asd.instafood.db.models.Anunciante;
 import com.example.asd.instafood.db.models.TipoComida;
 
 import java.util.List;
@@ -19,5 +20,9 @@ public class RegistroRestauranteViewModel extends SuperAndroidViewModel
     public LiveData<List<TipoComida>> darLiveDataTiposComida()
     {
         return repository.darLiveDataTiposComida();
+    }
+    public LiveData<Anunciante> darAnunciante(String email)
+    {
+        return repository.darAnunciante(email);
     }
 }
