@@ -46,16 +46,17 @@ public class RestauranteActivity extends AppCompatActivity
         recyclerView=findViewById(R.id.recyclerViewPlatos);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
-        labName=findViewById(R.id.labTitulo);
-        labDescripcion=findViewById(R.id.labDescripcion);
+
+        labName=findViewById(R.id.labName);
+        labDescripcion=findViewById(R.id.labDesEditable);
         imageView=findViewById(R.id.imgLogoRest);
+
         cargarInfoRestaurante();
         cargarPlatosRecyclerView();
     }
 
     private void cargarPlatosRecyclerView()
     {
-        Toast.makeText(this, "id  " + idRestaurante, Toast.LENGTH_SHORT).show();
         final PlatosAdapter platosAdapter= new PlatosAdapter();
         recyclerView.setAdapter(platosAdapter);
         viewModel.consultarPlatosRestaurante(idRestaurante).observe(this, new Observer<List<Plato>>() {

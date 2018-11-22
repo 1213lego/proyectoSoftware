@@ -21,5 +21,5 @@ public class RestaurantesMapsViewModel extends SuperAndroidViewModel
     {
         return repository.darLiveDataRestaurantes();
     }
-    
+
 }
