@@ -20,9 +20,13 @@
         android:id="@+id/imgLogoRest"
         android:layout_width="150dp"
         android:layout_height="123dp"
-        app:srcCompat="@drawable/common_google_signin_btn_icon_dark"
-        tools:layout_editor_absoluteX="14dp"
-        tools:layout_editor_absoluteY="14dp" />
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnAquiestamos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/common_google_signin_btn_icon_dark" />
 
     <Button
         android:id="@+id/btnVerOpiniones"
@@ -143,7 +147,7 @@
 
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerViewResFavoritos"
+        android:id="@+id/recyclerViewPlatos"
         android:layout_width="368dp"
         android:layout_height="192dp"
         android:layout_marginStart="8dp"
@@ -177,8 +181,6 @@
         android:layout_height="40dp"
         android:layout_marginTop="12dp"
         android:background="@drawable/cartabanner"
-        android:padding="10dp"
-        android:paddingStart="80dp"
         android:textAlignment="viewStart"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -190,52 +192,59 @@
         android:id="@+id/labName"
         android:layout_width="182dp"
         android:layout_height="32dp"
+        android:layout_marginStart="8dp"
         android:textColor="#FFFFFF"
-        tools:layout_editor_absoluteX="166dp"
-        tools:layout_editor_absoluteY="14dp" />
+        app:layout_constraintBottom_toTopOf="@+id/labDescripcion"
+        app:layout_constraintStart_toEndOf="@+id/imgLogoRest" />
 
     <TextView
         android:id="@+id/labDescripcion"
         android:layout_width="100dp"
         android:layout_height="20dp"
+        android:layout_marginStart="8dp"
         android:text="Descripcion:"
         android:textColor="#FFFFFF"
-        tools:layout_editor_absoluteX="166dp"
-        tools:layout_editor_absoluteY="46dp" />
+        app:layout_constraintBottom_toTopOf="@+id/labDesEditable"
+        app:layout_constraintStart_toEndOf="@+id/imgLogoRest" />
 
     <TextView
         android:id="@+id/labDesEditable"
         android:layout_width="200dp"
         android:layout_height="40dp"
+        android:layout_marginStart="8dp"
         android:textColor="#FFFFFF"
-        tools:layout_editor_absoluteX="166dp"
-        tools:layout_editor_absoluteY="66dp" />
+        app:layout_constraintBottom_toTopOf="@+id/labDireccion"
+        app:layout_constraintStart_toEndOf="@+id/imgLogoRest" />
 
     <TextView
         android:id="@+id/labDireccion"
         android:layout_width="70dp"
         android:layout_height="20dp"
+        android:layout_marginStart="8dp"
         android:text="Dirección:"
         android:textColor="#FFFFFF"
-        tools:layout_editor_absoluteX="166dp"
-        tools:layout_editor_absoluteY="106dp" />
+        app:layout_constraintBottom_toTopOf="@+id/labTelefono"
+        app:layout_constraintStart_toEndOf="@+id/imgLogoRest" />
 
     <TextView
         android:id="@+id/labTelefono"
         android:layout_width="70dp"
         android:layout_height="20dp"
+        android:layout_marginStart="8dp"
         android:text="Teléfono:"
         android:textColor="#FFFFFF"
-        tools:layout_editor_absoluteX="166dp"
-        tools:layout_editor_absoluteY="126dp" />
+        app:layout_constraintBottom_toTopOf="@+id/labCalificaciones"
+        app:layout_constraintStart_toEndOf="@+id/imgLogoRest" />
 
     <TextView
         android:id="@+id/labCalificaciones"
         android:layout_width="100dp"
         android:layout_height="20dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="20dp"
         android:text="Calificaciones:"
         android:textColor="#FFFFFF"
-        tools:layout_editor_absoluteX="166dp"
-        tools:layout_editor_absoluteY="146dp" />
+        app:layout_constraintBottom_toTopOf="@+id/btnVerOpiniones"
+        app:layout_constraintStart_toEndOf="@+id/imgLogoRest" />
 
 </android.support.constraint.ConstraintLayout>

@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -58,7 +57,7 @@ public class UsuarioActivity extends AppCompatActivity
         //ACCEDO A LA TABLA Y GUARDO LA INFORMACION
 
         //Para el recyclerview
-        recyclerView=findViewById(R.id.recyclerViewResFavoritos);
+        recyclerView=findViewById(R.id.recyclerViewPlatos);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
         cargarUsuario();

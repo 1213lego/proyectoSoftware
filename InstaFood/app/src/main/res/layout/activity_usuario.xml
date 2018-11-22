@@ -65,7 +65,7 @@
         app:layout_constraintTop_toTopOf="@+id/imgFondo" />
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerViewResFavoritos"
+        android:id="@+id/recyclerViewPlatos"
         android:layout_width="345dp"
         android:layout_height="187dp"
         android:layout_marginStart="2dp"
@@ -88,7 +88,7 @@
         android:layout_marginBottom="12dp"
         android:background="@drawable/favbanner"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerViewResFavoritos"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerViewPlatos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.705"
         app:layout_constraintStart_toStartOf="parent"
@@ -104,8 +104,8 @@
         android:onClick="prueba"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/recyclerViewResFavoritos"
-        app:layout_constraintStart_toStartOf="@+id/recyclerViewResFavoritos" />
+        app:layout_constraintEnd_toEndOf="@+id/recyclerViewPlatos"
+        app:layout_constraintStart_toStartOf="@+id/recyclerViewPlatos" />
 
     <Button
         android:id="@+id/btnPerfil"
