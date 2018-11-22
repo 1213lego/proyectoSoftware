@@ -127,8 +127,8 @@ public class AnuncianteActivity extends AppCompatActivity
             @Override
             public void onItemClick(Restaurante restaurante)
             {
-                // lanzar un intent con la vista de un restaurante
-                Toast.makeText(AnuncianteActivity.this, "Lanzar vista del restaurante con los platos", Toast.LENGTH_SHORT).show();
+               Intent intent= new Intent(AnuncianteActivity.this,RestauranteActivity.class);
+               intent.putExtra("Id",restaurante.getRestauranteId());
             }
         });
     }

@@ -1,5 +1,7 @@
 package com.example.asd.instafood.RecyclerViewsAdapters;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -36,6 +38,11 @@ public class RestauranteFavoritoAdapter extends RecyclerView.Adapter<Restaurante
         restauranteHolder.descripcion.setText(restaurante.getDescripcionRestaurante());
         restauranteHolder.telefono.setText(restaurante.getTelefonoRestaurante());
         restauranteHolder.direccion.setText(restaurante.getDireccionRestaurante());
+        if(restaurante.getImageArray()!=null)
+        {
+            Bitmap bitmap= BitmapFactory.decodeByteArray(restaurante.getImageArray(),0,restaurante.getImageArray().length);
+            restauranteHolder.imageView.setImageBitmap(bitmap);
+        }
     }
 
     public Restaurante darRestaurante(int i)

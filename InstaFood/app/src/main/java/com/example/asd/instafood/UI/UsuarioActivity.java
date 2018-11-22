@@ -32,7 +32,6 @@ public class UsuarioActivity extends AppCompatActivity
     private UsuarioActivityViewModel usuarioActivityViewModel;
     private String emailUsuario;
     private List<Restaurante> restauranteList;
-
     private RecyclerView recyclerView;
     private ImageView imageViewUsuario;
     private TextView nombre;
