@@ -37,7 +37,6 @@ public class AnuncianteActivity extends AppCompatActivity
     private List<Restaurante> restauranteList;
     private RecyclerView recyclerView;
     private ImageView imageViewUsuario;
-    private TextView email;
     private TextView nombre;
     private TextView apellido;
     private Button btnBuscarRes;
@@ -53,7 +52,6 @@ public class AnuncianteActivity extends AppCompatActivity
         Intent intent=getIntent();
         emailUsuario=intent.getStringExtra("Email");
         imageViewUsuario=findViewById(R.id.imgUsuario);
-        email=findViewById(R.id.txtEmail);
         nombre= findViewById(R.id.txtNombre);
         apellido= findViewById(R.id.txtApellidos);
         btnBuscarRes=(Button) findViewById(R.id.btnBuscarRestaurantes);
@@ -143,7 +141,6 @@ public class AnuncianteActivity extends AppCompatActivity
             public void onChanged(@Nullable Usuario usuario) {
                 if(usuario!=null)
                 {
-                    email.setText(usuario.getEmail());
                     nombre.setText(usuario.getNombre());
                     apellido.setText(usuario.getApellido());
                     if(usuario.getImageArray()!=null)
