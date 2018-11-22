@@ -160,6 +160,12 @@ public abstract class DatabaseInstafood extends RoomDatabase
 
             int restauranteId1= (int)restauranteDao.ingresar(restaurante1);
 
+            Restaurante rest= new Restaurante(idAnunciante1,id4,"Comidas Rapidas La Quinta",
+                    "3111654","Hamburguesas, perros y mas", 4.427367,-75.205258,
+                    "dsfdsfdvdsvsd",new byte[]{2,5,5});
+
+            int r= (int)restauranteDao.ingresar(restaurante1);
+
             Restaurante restaurante2= new Restaurante(idAnunciante2,id4,"Empanadas Toro Rojo",
                     "1775187157","Empanadas y mas", 4.449076 ,-75.200242,
                     "fefefdsfdsfdsf",new byte[]{2,5,5});

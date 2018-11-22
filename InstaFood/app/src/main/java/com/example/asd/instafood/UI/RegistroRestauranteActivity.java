@@ -201,11 +201,7 @@ public class RegistroRestauranteActivity extends AppCompatActivity {
                 registroRestauranteViewModel.ingresar(restaurante);
                 Intent intent= new Intent();
                 setResult(RESULT_OK,intent);
-            }
-            else
-            {
-                Intent intent=new Intent();
-                setResult(RESULT_CANCELED,intent);
+                finish();
             }
         }
     }

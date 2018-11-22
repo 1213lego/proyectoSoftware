@@ -18,6 +18,7 @@ import com.example.asd.instafood.R;
 import com.example.asd.instafood.Repositories.Repository;
 public class MainActivity extends AppCompatActivity
 {
+    private static final int MY_PERMISSIONS_REQUEST_UBICATION= 1;
     private Button btnMap, btnvistaRestaurante,btnRegistrarse, btnIniciarSesion;
    @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -26,7 +27,9 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         btnMap=(Button) findViewById(R.id.btnVistaRestaurante);
         btnIniciarSesion = (Button)findViewById(R.id.btnIniciarSesion);
-
+        ActivityCompat.requestPermissions(this,
+                new String[]{Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.ACCESS_COARSE_LOCATION},
+                MY_PERMISSIONS_REQUEST_UBICATION);
     }
     public void openMap(View view)
     {

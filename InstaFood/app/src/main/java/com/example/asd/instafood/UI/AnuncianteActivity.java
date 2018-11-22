@@ -88,17 +88,6 @@ public class AnuncianteActivity extends AppCompatActivity
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data)
     {
-        if(requestCode==REQUEST_CODE_CREAR_RESTAURANTE)
-        {
-            if(requestCode==RESULT_OK)
-            {
-                Toast.makeText(this, "Se ha agregado el nuevo restaurante", Toast.LENGTH_SHORT).show();
-            }
-            else 
-            {
-                Toast.makeText(this, "No se registro el Restaurante", Toast.LENGTH_SHORT).show();
-            }
-        }
     }
 
     private void cargarRestaurantesMisRecyclerview()

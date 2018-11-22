@@ -35,7 +35,6 @@ public class UsuarioActivity extends AppCompatActivity
 
     private RecyclerView recyclerView;
     private ImageView imageViewUsuario;
-    private TextView email;
     private TextView nombre;
     private TextView apellido;
     private Button btnBuscarRes;
@@ -50,7 +49,6 @@ public class UsuarioActivity extends AppCompatActivity
         emailUsuario=intent.getStringExtra("Email");
 
         imageViewUsuario=findViewById(R.id.imgUsuario);
-        email=findViewById(R.id.txtEmail);
         nombre= findViewById(R.id.txtNombre);
         apellido= findViewById(R.id.txtApellidos);
         btnBuscarRes=(Button) findViewById(R.id.btnBuscarRestaurantes);
