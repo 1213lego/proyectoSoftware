@@ -55,7 +55,7 @@ public class RegistroUsuarioActivity extends AppCompatActivity {
         setContentView(R.layout.activity_registro_usuario);
         viewModel=ViewModelProviders.of(this).get(RegistroUsuarioViewModel.class);
         btnExaminar = (Button) findViewById(R.id.btnExaminar);
-        imgUsuario = (ImageView) findViewById(R.id.imgRestaurante);
+        imgUsuario = (ImageView) findViewById(R.id.imgUsuario);
         txtNombre=findViewById(R.id.txtNombre);
         txtApellido=findViewById(R.id.txtApellido);
         txtEmail=findViewById(R.id.txtEmail);

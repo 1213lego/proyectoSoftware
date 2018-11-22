@@ -81,7 +81,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     // UI references.
     private AutoCompleteTextView mEmailView;
     private EditText mPasswordView;
-
+    private Button btnAbrirRegistar;
     private SignInButton signInGoogle;
     private GoogleApiClient googleApiClient;
     private LoginActivityViewModel viewModel;
@@ -97,7 +97,14 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         populateAutoComplete();
         viewModel= ViewModelProviders.of(this).get(LoginActivityViewModel.class);
         mPasswordView = (EditText) findViewById(R.id.txtPassword);
-
+        btnAbrirRegistar=findViewById(R.id.btnAbrirRegistrar);
+        btnAbrirRegistar.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(LoginActivity.this,RegistroUsuarioActivity.class);
+                startActivity(intent);
+            }
+        });
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener()
         {
             @Override

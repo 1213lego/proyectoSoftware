@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         btnMap=(Button) findViewById(R.id.btnVistaRestaurante);
         btnIniciarSesion = (Button)findViewById(R.id.btnIniciarSesion);
-        Repository repository= new Repository(getApplication());
 
     }
     public void openMap(View view)
@@ -36,12 +35,6 @@ public class MainActivity extends AppCompatActivity
            Intent intent=new Intent(this,MapsActivity.class);
            startActivity(intent);
 
-        }
-        else if(view.getId()==R.id.btnVistaRestaurante)
-        {
-            Intent intent=new Intent(this,UsuarioActivity.class);
-            intent.putExtra("Email","usuario1@usuario1.com");
-            startActivity(intent);
         }
     }
 
@@ -53,7 +46,6 @@ public class MainActivity extends AppCompatActivity
         {
             Intent intent=new Intent(this,LoginActivity.class);
             startActivity(intent);
-
         }
 
     }
