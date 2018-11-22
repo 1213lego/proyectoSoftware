@@ -116,7 +116,7 @@ public class AnuncianteActivity extends AppCompatActivity
             {
                 Restaurante restaurante= restauranteAdapter.darRestaurante(viewHolder.getAdapterPosition());
                 viewModel.eliminar(restaurante);
-                Toast.makeText(AnuncianteActivity.this, "Restaurante Favorito Eliminado", Toast.LENGTH_SHORT).show();
+                Toast.makeText(AnuncianteActivity.this, "Restaurante Eliminado", Toast.LENGTH_SHORT).show();
 
 
             }

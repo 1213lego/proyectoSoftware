@@ -106,13 +106,9 @@ public class UsuarioActivity extends AppCompatActivity
             public void onItemClick(Restaurante restaurante)
             {
                 // lanzar unn intent con la vista de un restaurante mas detallada, en esta vista deben estan los platos del restaurante
-                Toast.makeText(UsuarioActivity.this, "Lanzar vista del restaurante con los platos", Toast.LENGTH_SHORT).show();
-                byte [] aaa= restaurante.getImageArray();
-                if (aaa != null) {
-                    Toast.makeText(UsuarioActivity.this, " " + aaa.length, Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(UsuarioActivity.this, "no hay imagne", Toast.LENGTH_SHORT).show();
-                }
+                Intent intent= new Intent(UsuarioActivity.this,RestauranteActivity.class);
+                intent.putExtra("Id",restaurante.getRestauranteId());
+                startActivity(intent);
             }
         });
     }

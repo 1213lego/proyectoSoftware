@@ -16,6 +16,7 @@ import com.example.asd.instafood.db.dao.UsuarioDao;
 import com.example.asd.instafood.db.database.DatabaseInstafood;
 import com.example.asd.instafood.db.models.Anunciante;
 import com.example.asd.instafood.db.models.IDto;
+import com.example.asd.instafood.db.models.Plato;
 import com.example.asd.instafood.db.models.Restaurante;
 import com.example.asd.instafood.db.models.TipoComida;
 import com.example.asd.instafood.db.models.Usuario;
@@ -176,10 +177,15 @@ public class Repository
     {
         return anuncianteDao.darListaResturantesAnunciante(email);
     }
-    public LiveData<List<Restaurante>> consultarRestaurantesCercanos(double latOrigen, double lonOrigen, double radio)
+    public LiveData<List<Plato>>  consultarPlatosRestaurante(int id)
     {
-        return restauranteDao.consultarRestaurantesCercano(latOrigen,lonOrigen,radio);
+        return restauranteDao.consultarPlatosRestaurante(id);
     }
+    public LiveData<Restaurante> consultarRestauranteID(int id)
+    {
+        return restauranteDao.consultarRestauranteID(id);
+    }
+
     protected AnuncianteDao getAnuncianteDao() {
         return anuncianteDao;
     }

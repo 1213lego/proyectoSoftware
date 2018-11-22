@@ -7,7 +7,8 @@ import android.view.View;
 
 import com.example.asd.instafood.R;
 
-public class RegistroPlatoActivity extends AppCompatActivity {
+public class RegistroPlatoActivity extends AppCompatActivity
+{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
