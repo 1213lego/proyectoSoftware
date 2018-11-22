@@ -4,12 +4,16 @@ import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.asd.instafood.R;
@@ -25,9 +29,13 @@ import java.util.List;
 public class RestauranteActivity extends AppCompatActivity
 {
     private int idRestaurante;
+    private TextView labName;
+    private TextView labDescripcion;
+    private ImageView imageView;
     private RestauranteActivityViewModel viewModel;
     private List<Plato> platoList;
     private RecyclerView recyclerView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) 
     {
@@ -38,6 +46,9 @@ public class RestauranteActivity extends AppCompatActivity
         recyclerView=findViewById(R.id.recyclerViewPlatos);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
+        labName=findViewById(R.id.labTitulo);
+        labDescripcion=findViewById(R.id.labDescripcion);
+        imageView=findViewById(R.id.imgLogoRest);
         cargarInfoRestaurante();
         cargarPlatosRecyclerView();
     }
@@ -88,7 +99,13 @@ public class RestauranteActivity extends AppCompatActivity
             {
                 if(restaurante!=null)
                 {
-                    
+                    labDescripcion.setText(restaurante.getDescripcionRestaurante());
+                    labName.setText(restaurante.getNombreRestaurante());
+                    if(restaurante.getImageArray()!=null)
+                    {
+                        Bitmap bitmap= BitmapFactory.decodeByteArray(restaurante.getImageArray(),0,restaurante.getImageArray().length);
+                        imageView.setImageBitmap(bitmap);
+                    }
                 }
             }
         });
