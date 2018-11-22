@@ -139,6 +139,10 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
 
     }
+    public void nohacenadautil()
+    {
+
+    }
     @Override
     public void onInfoWindowClick(Marker marker)
     {
