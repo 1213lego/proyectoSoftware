@@ -127,7 +127,7 @@ public class UsuarioActivity extends AppCompatActivity
             public void onChanged(@Nullable Usuario usuario) {
                 if(usuario!=null)
                 {
-                    email.setText(usuario.getEmail());
+                    //email.setText(usuario.getEmail());
                     nombre.setText(usuario.getNombre());
                     apellido.setText(usuario.getApellido());
                     if(usuario.getImageArray()!=null)
