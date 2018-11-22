@@ -152,70 +152,70 @@ public class hjgj {
         }
 
         ViewInteraction recyclerView = onView(
-                allOf(withId(R.id.recyclerViewResFavoritos),
+                allOf(withId(R.id.recyclerViewPlatos),
                         childAtPosition(
                                 withId(R.id.layoutRestauranteFavoritos),
                                 1)));
         recyclerView.perform(actionOnItemAtPosition(0, click()));
 
         ViewInteraction recyclerView2 = onView(
-                allOf(withId(R.id.recyclerViewResFavoritos),
+                allOf(withId(R.id.recyclerViewPlatos),
                         childAtPosition(
                                 withId(R.id.layoutRestauranteFavoritos),
                                 1)));
         recyclerView2.perform(actionOnItemAtPosition(0, click()));
 
         ViewInteraction recyclerView3 = onView(
-                allOf(withId(R.id.recyclerViewResFavoritos),
+                allOf(withId(R.id.recyclerViewPlatos),
                         childAtPosition(
                                 withId(R.id.layoutRestauranteFavoritos),
                                 1)));
         recyclerView3.perform(actionOnItemAtPosition(1, click()));
 
         ViewInteraction recyclerView4 = onView(
-                allOf(withId(R.id.recyclerViewResFavoritos),
+                allOf(withId(R.id.recyclerViewPlatos),
                         childAtPosition(
                                 withId(R.id.layoutRestauranteFavoritos),
                                 1)));
         recyclerView4.perform(actionOnItemAtPosition(2, click()));
 
         ViewInteraction recyclerView5 = onView(
-                allOf(withId(R.id.recyclerViewResFavoritos),
+                allOf(withId(R.id.recyclerViewPlatos),
                         childAtPosition(
                                 withId(R.id.layoutRestauranteFavoritos),
                                 1)));
         recyclerView5.perform(actionOnItemAtPosition(1, click()));
 
         ViewInteraction recyclerView6 = onView(
-                allOf(withId(R.id.recyclerViewResFavoritos),
+                allOf(withId(R.id.recyclerViewPlatos),
                         childAtPosition(
                                 withId(R.id.layoutRestauranteFavoritos),
                                 1)));
         recyclerView6.perform(actionOnItemAtPosition(1, click()));
 
         ViewInteraction recyclerView7 = onView(
-                allOf(withId(R.id.recyclerViewResFavoritos),
+                allOf(withId(R.id.recyclerViewPlatos),
                         childAtPosition(
                                 withId(R.id.layoutRestauranteFavoritos),
                                 1)));
         recyclerView7.perform(actionOnItemAtPosition(1, click()));
 
         ViewInteraction recyclerView8 = onView(
-                allOf(withId(R.id.recyclerViewResFavoritos),
+                allOf(withId(R.id.recyclerViewPlatos),
                         childAtPosition(
                                 withId(R.id.layoutRestauranteFavoritos),
                                 1)));
         recyclerView8.perform(actionOnItemAtPosition(1, click()));
 
         ViewInteraction recyclerView9 = onView(
-                allOf(withId(R.id.recyclerViewResFavoritos),
+                allOf(withId(R.id.recyclerViewPlatos),
                         childAtPosition(
                                 withId(R.id.layoutRestauranteFavoritos),
                                 1)));
         recyclerView9.perform(actionOnItemAtPosition(2, click()));
 
         ViewInteraction recyclerView10 = onView(
-                allOf(withId(R.id.recyclerViewResFavoritos),
+                allOf(withId(R.id.recyclerViewPlatos),
                         childAtPosition(
                                 withId(R.id.layoutRestauranteFavoritos),
                                 1)));
