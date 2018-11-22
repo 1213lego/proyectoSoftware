@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         btnMap=(Button) findViewById(R.id.btnVistaRestaurante);
         btnIniciarSesion = (Button)findViewById(R.id.btnIniciarSesion);
-        btnRegistrarse = (Button)findViewById(R.id.btnRegistrarse);
         Repository repository= new Repository(getApplication());
 
     }
@@ -59,13 +58,6 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-    public void openRegisterForm(View view)
-    {
-        if(view.getId() == R.id.btnRegistrarse)
-        {
-            Intent intent=new Intent(this,RegistroUsuarioActivity.class);
-            startActivity(intent);
-        }
-    }
+
 
 }
