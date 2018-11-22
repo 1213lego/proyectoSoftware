@@ -1,21 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.AnuncianteActivity"
-    tools:layout_editor_absoluteY="81dp">
+    tools:context=".UI.AnuncianteActivity">
 
     <LinearLayout
         android:id="@+id/layoutAll"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_width="match_parent"
+        android:layout_height="501dp"
+        android:orientation="vertical">
 
         <LinearLayout
             android:id="@+id/layoutUsuario"
@@ -45,69 +40,66 @@
                     android:id="@+id/txtEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Correo electrónico..." />
+                    android:text="" />
 
                 <TextView
                     android:id="@+id/txtNombre"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Nombres..." />
+                    android:text="" />
 
                 <TextView
                     android:id="@+id/txtApellidos"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Apellidos..." />
+                    android:text="" />
 
                 <TextView
-                    android:id="@+id/txtFechaSuscripcion"
+                    android:id="@+id/txtSaldo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Fecha de suscripción..." />
+                    android:text="solo si hacemos saldo..." />
 
             </LinearLayout>
 
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/layoutAgregarRestaurante"
+            android:id="@+id/layoutRestauranteFavoritos"
             android:layout_width="match_parent"
-            android:layout_height="94dp"
-            android:orientation="horizontal"
-            android:padding="10dp">
-
-            <Button
-                android:id="@+id/btnAgregarRestaurante"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:onClick="openRegister"
-                android:text="¡AÑADIR RESTAURANTE!" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/layoutMisRestaurantes"
-            android:layout_width="match_parent"
-            android:layout_height="279dp"
+            android:layout_height="328dp"
             android:orientation="vertical"
             android:padding="10dp">
 
             <TextView
-                android:id="@+id/txtMisRestaurantes"
-                android:layout_width="match_parent"
+                android:id="@+id/lblMisResturantes"
+                android:layout_width="368dp"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:paddingStart="100dp"
+                android:paddingStart="80dp"
                 android:textSize="20sp"
                 tools:text="Mis Restaurantes" />
 
             <android.support.v7.widget.RecyclerView
-                android:id="@+id/listaMisRestaurantes"
+                android:id="@+id/recyclerViewMisRestaurantes"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="500dp"
+                android:fadeScrollbars="false"
+                android:soundEffectsEnabled="false"
+                app:fastScrollEnabled="false"
                 tools:listitem="@layout/restaurante_item" />
 
         </LinearLayout>
     </LinearLayout>
 
-</android.support.constraint.ConstraintLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/botonNuevoRestaurante"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="32dp"
+        android:src="@drawable/ic_add"
+        app:layout_anchor="@+id/layoutAll"
+        app:layout_anchorGravity="right|bottom" />
+
+</android.support.design.widget.CoordinatorLayout>

@@ -26,4 +26,8 @@ public class UsuarioActivityViewModel extends SuperAndroidViewModel
     {
         return repository.darLiveDataUsuarioPorEmail(email);
     }
+    public LiveData<List<Restaurante>> darLiveDataRestaurantes()
+    {
+        return repository.darLiveDataRestaurantes();
+    }
 }

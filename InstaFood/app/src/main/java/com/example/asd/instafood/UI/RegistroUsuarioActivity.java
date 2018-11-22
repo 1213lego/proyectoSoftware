@@ -37,7 +37,6 @@ public class RegistroUsuarioActivity extends AppCompatActivity {
     // Constantes
     private static String APP_DIRECTORY = "MyPictureApp/";
     private static String MEDIA_DIRECTORY = APP_DIRECTORY + "PictureApp";
-    private final int MY_PERMISSIONS = 100;
     private final int PHOTO_CODE = 200;
     private final int SELECT_PICTURE = 300;
 
@@ -124,6 +123,9 @@ public class RegistroUsuarioActivity extends AppCompatActivity {
                     Anunciante anunciante= new Anunciante(txtEmail.getText().toString(),5000,new Date());
                     viewModel.ingresar(anunciante);
                 }
+                Toast.makeText(this, "Se ha registrado satisfatoriamente", Toast.LENGTH_SHORT).show();
+                Intent intent= new Intent(this,LoginActivity.class);
+                startActivity(intent);
             }
             else
             {

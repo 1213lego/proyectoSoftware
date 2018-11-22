@@ -20,10 +20,10 @@ public interface AnuncianteDao extends IDao<Anunciante>
     @Query("select * from Anunciante")
     LiveData<List<Anunciante>> consultarAnunciantes();
 
-    @Query("select * from Anunciante where emailUsuario* :email")
+    @Query("select * from Anunciante where emailUsuario* :email LIMIT 1")
     LiveData<Anunciante> consultarAnuncianteEmail(String email);
 
-    @Query("select * from Restaurante where Restaurante.anunciante= :id")
-    LiveData<List<Restaurante>> darListaResturantesAnunciante(int id);
+    @Query("select * from Restaurante INNER JOIN Anunciante where Restaurante.anunciante=Anunciante.idAnunciante and Anunciante.emailUsuario=:email")
+    LiveData<List<Restaurante>> darListaResturantesAnunciante(String email);
 
 }

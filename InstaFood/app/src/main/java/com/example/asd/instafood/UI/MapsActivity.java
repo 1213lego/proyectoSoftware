@@ -43,8 +43,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private GoogleMap mMap;
     private boolean locationEnable;
     private RestaurantesMapsViewModel restaurantesMapsViewModel;
-    private LocationManager locManager;
-    private Location loc;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -97,9 +95,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         mMap.setOnInfoWindowLongClickListener(this);
         mMap.setInfoWindowAdapter(new CustomInfoWindowAdapter());
         mMap.getUiSettings().setZoomControlsEnabled(true);
-        locManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        loc = locManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-
         crearMakers();
     }
 

@@ -172,9 +172,9 @@ public class Repository
     {
         return anuncianteDao.consultarAnuncianteEmail(email);
     }
-    public LiveData<List<Restaurante>> darRestaurantesAnunciante(int id)
+    public LiveData<List<Restaurante>> darRestaurantesAnunciante(String email)
     {
-        return anuncianteDao.darListaResturantesAnunciante(id);
+        return anuncianteDao.darListaResturantesAnunciante(email);
     }
     public LiveData<List<Restaurante>> consultarRestaurantesCercanos(double latOrigen, double lonOrigen, double radio)
     {

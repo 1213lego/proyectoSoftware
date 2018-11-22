@@ -39,8 +39,6 @@ public class UsuarioActivity extends AppCompatActivity
     private TextView nombre;
     private TextView apellido;
     private Button btnBuscarRes;
-    private FloatingActionButton floatingActionButtonAdd;
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -57,27 +55,9 @@ public class UsuarioActivity extends AppCompatActivity
         apellido= findViewById(R.id.txtApellidos);
         btnBuscarRes=(Button) findViewById(R.id.btnBuscarRestaurantes);
 
-        floatingActionButtonAdd=findViewById(R.id.botonNuevoRestaurante);
-        floatingActionButtonAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // para añadir restuarante a la lista de restaurantes favoritos
-                //lanzar un intent abriendo la lista de restaurantes para que el usuario la seleccione y la agregue
-                Toast.makeText(UsuarioActivity.this,
-                        "Lanzar un activity donde pueda eelegir los resturantes favoritos de una lista",
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
-
         //TODO ACCEDER A LA BASE DE DATOS
 
         //ACCEDO A LA TABLA Y GUARDO LA INFORMACION
-
-
-
-
-
-
 
         //Para el recyclerview
         recyclerView=findViewById(R.id.recyclerViewResFavoritos);
@@ -85,12 +65,6 @@ public class UsuarioActivity extends AppCompatActivity
         recyclerView.setHasFixedSize(true);
         cargarUsuario();
         cargarRestaurantesFavoritosRecyclerview();
-
-
-
-
-
-
 
     }
 
@@ -165,16 +139,31 @@ public class UsuarioActivity extends AppCompatActivity
             }
         });
     }
-    private void cargarValoresUsuario(Usuario usuario)
-    {
-    }
-
-    private void buscarRestaurante(View view)
+    public void prueba(View view)
     {
         if(view.getId()==R.id.btnBuscarRestaurantes)
         {
-            Intent intent= new Intent(this,MapsActivity.class);
-            startActivity(intent);
+            usuarioActivityViewModel.darLiveDataRestaurantes().observe(this, new Observer<List<Restaurante>>() {
+                @Override
+                public void onChanged(@Nullable List<Restaurante> restauranteList)
+                {
+                    double latRadianesOrigen=Math.toRadians(4.449977379844924);
+                    double lonRadianesOrigen=Math.toRadians(-75.19983106487456);
+
+                    for(int i=0;i<restauranteList.size();i++)
+                    {
+                        double difLatitudRadianes=Math.toRadians(restauranteList.get(i).getLatitud())-latRadianesOrigen;
+                        double difLongitudRadianes=Math.toRadians(restauranteList.get(i).getLongitud()-lonRadianesOrigen);
+
+                        double sincuadradroLatitudes=Math.pow(Math.sin(difLatitudRadianes/2),2);
+                        double sincuadradoLongitud=Math.pow(Math.sin(difLongitudRadianes/2),2);
+
+                        double a=sincuadradroLatitudes+Math.cos(latRadianesOrigen)*Math.cos(restauranteList.get(i).getLatitud())*sincuadradoLongitud;
+                        double distance=2*6371*Math.atan2(Math.sqrt(a),Math.sqrt(1-a));
+
+                    }
+                }
+            });
         }
     }
 }

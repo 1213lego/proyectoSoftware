@@ -24,9 +24,9 @@ public class AnuncianteViewModel extends SuperAndroidViewModel
     {
         return repository.darAnunciante(email);
     }
-    public LiveData<List<Restaurante>> darListaRestaurante(int id)
+    public LiveData<List<Restaurante>> darListaRestaurante(String email)
     {
-        return repository.darRestaurantesAnunciante(id);
+        return repository.darRestaurantesAnunciante(email);
     }
 
 }

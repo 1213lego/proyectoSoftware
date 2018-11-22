@@ -125,8 +125,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         signInGoogle.setOnClickListener(this);
         GoogleSignInOptions signInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
         googleApiClient = new GoogleApiClient.Builder(this).enableAutoManage(this,this).addApi(Auth.GOOGLE_SIGN_IN_API,signInOptions).build();
-
-
     }
 
     private void populateAutoComplete() {
@@ -303,6 +301,10 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                     viewModel.darUsuario(mEmailView.getText().toString()).removeObservers(LoginActivity.this);
                 }
             });
+        }
+        else
+        {
+            Toast.makeText(this, "Los campos estan vacios", Toast.LENGTH_SHORT).show();
         }
     }
 
